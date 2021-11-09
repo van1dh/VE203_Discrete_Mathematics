@@ -1,0 +1,309 @@
+\newcommand{\plogo}{\fbox{$\mathcal{PL}$}} % Generic dummy publisher logo
+
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage{fouriernc} % Use the New Century Schoolbook font
+\documentclass{article}[12pt]
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}  
+\newtheorem{lemma}{Lemma}  
+\usepackage{pifont}
+\newtheorem{proof}{Proof}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{verbatim}
+%\usepackage{ctex}
+\usepackage{gauss}
+\usepackage{float}
+\usepackage[version=4]{mhchem}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+%\usepackage{algorithm}
+\usepackage{algorithmic}
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\SetKwInput{KwInput}{Input}                % Set the Input
+\SetKwInput{KwOutput}{Output} 
+\begin{document}
+\noindent
+
+%========================================================================
+\noindent\framebox[\linewidth]{\shortstack[c]{
+\Large{\textbf{VE203 Assignment 7}}}}
+\begin{center}
+\footnotesize{\quad Name: YIN Guoxin\quad Student ID: 517370910043}
+
+
+\end{center}
+%=======================================================================
+
+\noindent \textbf{Q1.}
+Since $a c \equiv b c\ (\bmod\  m)$, we have $m|(ac-bc)$. Since $\frac{m}{\operatorname{gcd}(c, m)}|m$, we also have $\frac{m}{\operatorname{gcd}(c, m)}|(ac-bc)=(a-b)c$ and also $\operatorname{gcd}(\frac{m}{\operatorname{gcd}(c, m)},c)=1$. From this, we know that $\operatorname{gcd}(c, m)|(a-b)$, which means $a \equiv b\left(\bmod\ \frac{m}{\operatorname{gcd}(c, m)}\right)$.
+\\ 
+\\
+\noindent \textbf{Q2.}
+Since 36$x \equiv 75(\bmod\ 1309)$, we have $1309|(36x-75)$, i.e. there exists $m\in \mathbb{Z}$ such that $75=36x+1209m$. Since 
+\begin{align*}
+1309&=36\times 36+13\\
+36&=2\times 13+10\\
+13&=10+3\\
+10&=3\times 3+1\\
+3&=3\times 1,
+\end{align*} we know that gcd(1309,36)=1. Therefore, there we have 
+\begin{align*}
+1&=10-3\times 3\\
+&=10-3\times (13-10)\\
+&=4\times 10-3\times 13\\
+&=4\times (36-2\times 13)-3\times 13\\
+&=4\times 36-11\times 13\\
+&=4\times 36-11\times (1309-36\times 36)\\
+&=400\times 36-11\times 1309,
+\end{align*}
+which means 1=$400\times 36-11\times 1309$. Therefore $75=400\times 75\times 36-11\times 75\times 1309=30000\times 36-825\times 1309$. Hence, $x=30000$ is a solution.\\ \\
+\noindent \textbf{Q3.}
+To solve this system, we need to solve 
+\begin{align*}
+x&\equiv 2 (\bmod\ 5)\\
+x&\equiv 4 (\bmod\ 7)\\
+x&\equiv 4 (\bmod\ 13)
+\end{align*}
+Now, 
+\begin{align*}
+&m=m_1m_2m_3=455\\
+&M_1=\frac{455}{5}=91\\
+&M_2=\frac{455}{7}=65\\
+&M_3=\frac{455}{13}=35\\
+\end{align*}
+To find $y_1$, 
+\begin{align*}
+91&=18\times 5+1\\
+1&=91-18\times 5\\
+\end{align*}
+Hence, let $y_1=1$. To find $y_2$, 
+\begin{align*}
+65&=9\times 7+2\\
+7&=3\times 2+1\\
+1&=7-3\times 2\\
+&=7-3\times (65-9\times 7)\\
+&=28\times 7-3\times 65
+\end{align*}
+Hence, let $y_2=-3$. To find $y_3$, 
+\begin{align*}
+35&=2\times 13+9\\
+13&=9+4\\
+9&=2\times 4+1\\
+1&=9-2\times 4\\
+&=9-2\times (13-9)\\
+&=3\times 9-2\times 13\\
+&=3\times (35-2\times 13)-2\times 13\\
+&=3\times 35-8\times 13
+\end{align*}
+Hence, let $y_3=3$. Therefore, 
+\begin{align*}
+x=\sum_{k=1}^{n}a_kM_ky_k=2\times 91\times 1+4\times 65\times (-3)+4\times 35\times 3=-178 (\bmod 455). 
+\end{align*}
+Therefore, the solutions are -178+455$y$, where $y\in \mathbb{Z}$.
+\\
+
+\noindent \textbf{Q4.}
+\begin{align*}
+6|(x-5)
+\Rightarrow &3|(x-2)\\
+&2|(x-1),\\
+10|(x-3) \Rightarrow &5|(x-3)\\
+&2|(x-1),\\
+15|（x-8) \Rightarrow &5|(x-3)\\
+&3|(x-2)\\
+\end{align*}
+Since there are no contradiction between the equations in the right hand side, there must exist solutions and we turn the system into 
+\begin{align*}
+x&\equiv 1 (\bmod\ 2)\\
+x&\equiv 2 (\bmod\ 3)\\
+x&\equiv 3 (\bmod\ 5)
+\end{align*}
+Now, 
+\begin{align*}
+&m=m_1m_2m_3=30\\
+&M_1=\frac{30}{2}=15\\
+&M_2=\frac{30}{3}=10\\
+&M_3=\frac{30}{5}=6\\
+\end{align*}
+To find $y_1$, 
+\begin{align*}
+15&=7\times 2+1\\
+1&=15-7\times 2\\
+\end{align*}
+Hence, let $y_1=1$. To find $y_2$, 
+\begin{align*}
+10&=3\times 3+1\\
+1&=10-3\times 3\\
+\end{align*}
+Hence, let $y_2=1$. To find $y_3$, 
+\begin{align*}
+6&=5+1\\
+1&=6-5
+\end{align*}
+Hence, let $y_3=1$. Therefore, 
+\begin{align*}
+x=\sum_{k=1}^{n}a_kM_ky_k=1\times 15\times 1+2\times 10\times 1+3\times 6\times 1=53 (\bmod 30). 
+\end{align*}
+Therefore, the solutions are 53+30$y$, where $y\in \mathbb{Z}$.
+\\
+
+\noindent \textbf{Q5.}
+Now, 
+\begin{align*}
+&m=m_1m_2m_3m_4=6545\\
+&M_1=\frac{6545}{5}=1309\\
+&M_2=\frac{6545}{7}=935\\
+&M_3=\frac{6545}{11}=595\\
+&M_4=\frac{6545}{17}=385
+\end{align*}
+To find $y_1$, 
+\begin{align*}
+1309&=261\times 5+4\\
+5&=4+1\\
+1&=5-4\\
+&=5-(1309-261\times 5)\\
+&=262\times 5-1309
+\end{align*}
+Hence, let $y_1=-1$. To find $y_2$, 
+\begin{align*}
+935&=133\times 7+4\\
+7&=4+3\\
+4&=3+1\\
+1&=4-3\\
+&=4-(7-4)\\
+&=2\times 4-7\\
+&=2\times (935-133\times 7)-7\\
+&=2\times 935-267\times 7
+\end{align*}
+Hence, let $y_2=2$. To find $y_3$, 
+\begin{align*}
+595&=11\times 54+1\\
+1&=595-11\times 54
+\end{align*}
+Hence, let $y_3=1$. To find $y_4$, 
+\begin{align*}
+385&=22\times 17+11\\
+17&=11+6\\
+11&=6+5\\
+6&=5+1\\
+1&=6-5\\
+&=6-(11-6)\\
+&=2\times 6-11\\
+&=2\times (17-11)-11\\
+&=2\times 17-3\times (385-22\times 17)\\
+&=68\times 17-3\times 385
+\end{align*}
+Hence, let $y_4=-3$. Therefore, 
+\begin{align*}
+x=\sum_{k=1}^{n}a_kM_ky_k=5\times 1309\times (-1)+3\times 935\times 2+8\times 595\times 1+2\times 385\times -3=1515 (\bmod\ 6545). 
+\end{align*}
+Therefore, the solutions are 1515+6545$y$, where $y\in \mathbb{Z}$.
+\\
+
+
+
+\noindent \textbf{Q6.}
+Suppose, for a contradiction, that there exists $M,C\in \mathbb{N}$ such that for all $n>M$, $n \log _{2}(n)\leq C\log _{2}(n)$. But it cannot be true since when $n>C$, $n \log _{2}(n)> C\log _{2}(n)$ always hold.\\
+
+\noindent \textbf{Q7.}
+We just need to prove that $\log_a(n)=O\log_b(n)$ where $a,b$ are positive integers greater than 1. Then, 
+\begin{align*}
+\lim_{n\rightarrow \infty}\frac{\log_a(n)}{\log_b(n)}=\lim_{n\rightarrow \infty}\frac{\frac{1}{n(\ln a)}}{\frac{1}{n(\ln b)}}=\frac{\ln b}{\ln a},
+\end{align*}
+which means $\log_a(n)=O\log_b(n)$. When $a=2,b=10$, $a=2,b=e$, $a=10,b=2$, $a=10,b=e$, $a=e,b=2$, $a=e,b=10$, we can see that they have the same order from the equation we proved.
+\\
+
+\noindent \textbf{Q8.}
+For all $x\in \mathbb{R}$, $\left\lfloor x^{3}-4\right\rfloor\leq x^3-4$. For $x\leq 2$, $|\left\lfloor x^{3}-4\right\rfloor|\leq |x^3-4|<|x^3+4|=|x^3(1+\frac{4}{x^3})|\leq |x^3(1+4)|=|(x^3)|\times 5$. Therefore, by choosing $C\in \mathbb{N}$ with $C\geq 5$, we can see that $\left\lfloor x^{3}-4\right\rfloor$ is $O(x^3)$.
+Conversely, $\left\lfloor x^{3}-4\right\rfloor\geq x^3-5$. It is clear that for all $\epsilon>0$, there exists $D\in \mathbb{R}$ with $D>0$ such that for all $x>D$,
+\begin{align*}
+|1-\frac{5}{x^3}|\geq 1-\epsilon
+\end{align*}
+So, choosing $\epsilon=\frac{1}{2}$, we get $D\in \mathbb{R}$ with $D>0$ such that for all $x>D$,
+\begin{center}
+$|1-\frac{5}{x^3}|\geq \frac{1}{2}$ and $|\left\lfloor x^{3}-4\right\rfloor|> |x^3-5|=x^3|1-\frac{5}{x^3}|\geq \frac{1}{2}x^3$
+\end{center}
+So, if $C\in \mathbb{N}$ is such that $C\geq 2$, then $|x^3|\leq 2\times |\left\lfloor x^{3}-4\right\rfloor|$, which shows that $x^3$ is $O(\left\lfloor x^{3}-4\right\rfloor)$.\par
+Therefore, they have the same order.\\
+
+\noindent \textbf{Q9.}
+No. For $n$ large enough, 
+\begin{align*}
+\lim_{n\rightarrow \infty}\frac{n^n}{n^{n-k}}=\lim_{n\rightarrow \infty}n^k\rightarrow \infty,
+\end{align*}
+So there doesn't exist $C\in \mathbb{R}$ with $C\geq 0$ such that $\lim_{n\rightarrow \infty}\frac{n^n}{n^{n-k}}=C$, which means $n^n\not=O(n^{n-k}$).
+
+\newpage
+\noindent \textbf{Q10.}
+\begin{enumerate}[(i)]
+\item Note that the summation only makes sense when $n\geq 2$, therefore, we only discuss conditions when $n\geq 2$.
+\begin{itemize} 
+\item When $n=2$, $\sum_{j=2}^{2} \frac{1}{j}=\frac{1}{2}$ and $\int_{1}^{2} \frac{1}{x} d x=\ln x|^2_1=\ln 2-\ln 1=\ln 2>\frac{1}{2}$.
+\item If $n>2$ and $\sum_{j=2}^{n} \frac{1}{j}<\int_{1}^{n} \frac{1}{x} d x$ holds, suppose for $n+1$, $\sum_{j=2}^{n+1} \frac{1}{j}=\sum_{j=2}^{n} \frac{1}{j}+\frac{1}{n+1}<\int_{1}^{n} \frac{1}{x} d x+\frac{1}{n+1}$. Besides, $\int_{1}^{n+1} \frac{1}{x} d x=\int_{1}^{n} \frac{1}{x} d x+\int_{n}^{n+1} \frac{1}{x} d x=\int_{1}^{n} \frac{1}{x} d x+\ln x|^{n+1}_n=\int_{1}^{n} \frac{1}{x} d x+\ln (n+1) - ln(n)>\int_{1}^{n} \frac{1}{x} d x+\frac{1}{n+1}$. Therefore, we have $\sum_{j=2}^{n+1} \frac{1}{j}<\int_{1}^{n+1} \frac{1}{x} d x$.
+\end{itemize}
+\item $H(n)=\sum_{k=0}^{n-1} \frac{1}{n-k}=\sum_{j=1}^{n} \frac{1}{j}=1+\sum_{j=2}^{n} \frac{1}{j}<1+\int_{1}^{n} \frac{1}{x} d x<1+\ln n$. So, when $n>e$, $\ln e>1$, $1+\ln e<2\ln n$. Therefore, we have when $n>e$, $H(n)<2\ln n$, which means $O(\ln (n))$.
+\end{enumerate}
+
+
+\noindent \textbf{Q11.}
+\begin{enumerate}[(i)]
+\item The pseudocode is as follow,\\
+\begin{algorithm}[H]
+  \KwInput{$a_1,...,a_n$, $n$ unsorted elements}
+  \KwOutput{all the $a_i$, $1\leq i\leq n$ in increasing order}
+  \For {$k\rightarrow 2$ to $n$} 
+  {
+  $i\leftarrow 1$\\
+  $j\leftarrow k-1$\\
+  \While{$i<j$}
+   {
+   		$m\leftarrow \left\lfloor (i+j)/2\right\rfloor$;\\
+   		\If{$a_k>a_m$} {$i\leftarrow m+1$;}
+   		\Else {$j\leftarrow m$}
+   }
+  $p\leftarrow a_k$;\\
+  \For{$l\leftarrow 0$ to $k-i-1$} {$a_{k-l}\leftarrow a_{k-l-1}$;}
+  $a_i\leftarrow p$
+  }
+  \Return $(a_1,...,a_n$) in increasing order.
+\end{algorithm}
+\item 
+\begin{itemize}
+\item Insertion Sort Algorithm: 8+(1+2)+(1+3)+(4+1)+(1+5)+(4+3)+(3+5)+(2+7)=50
+\item Binary Insertion Sort Algorithm: 8+(1+3)+(3+4)+(3+2)+(5+6)+(5+4)+(5+6)+(7+8)=70
+\end{itemize}
+\item We define a function $f:\mathbb{N}\longrightarrow\mathbb{N}$ that on input $n$ counts the worst-case number of comparisons needed sort a list of length $n$. For a specific $j^{th}$ element to sort, if there is $k$ comparisons during the\textbf{ while} loop, which means $i=k-1$, there will be $j-i-1+1+1=j-i+1=j-k+1$ comparisons during the inner \textbf{for} loop. So there are $k+j-k+1=j+1$ comparisons in total during the $j^{th}$ passes. Adding all $j$ we get
+\begin{align*}
+\sum_{j=2}^n (j+1)=\frac{n^2}{2}+\frac{3n}{2}-2
+\end{align*}
+Besides, we also have $n$ comparisons for the outer for loops, so the total number of comparisons is $f(n)=n+\frac{n^2}{2}+\frac{3n}{2}-2=\frac{n^2}{2}+\frac{5n}{2}-2$. Since it is a polynomial of degree $2$, $f(n)=O(n^2)$.
+\item We define a function $f:\mathbb{N}\longrightarrow\mathbb{N}$ that on input $n$ counts the worst-case number of comparisons (excluded comparisons in while loop and for loop) needed sort a list of length $n$. For a specific $k^{th}$ element to sort, the worst case for the while-loop is $2^q=k-1$, $q=\log_2(k-1)$. Because there are $N$ elements in the list, the complexity is $O(n\log_2 n)$. 
+\par Since we know for insertion sort, the corresponding complexity is $O(n^2)$. Since $O(n\log_2 n)$ is way smaller than $O(n^2)$, the Binary Insertion Sort Algorithm is significantly faster than Insertion Sort.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+%========================================================================
+\end{document}

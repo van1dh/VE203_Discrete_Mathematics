@@ -1,0 +1,196 @@
+\newcommand{\plogo}{\fbox{$\mathcal{PL}$}} % Generic dummy publisher logo
+
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage{fouriernc} % Use the New Century Schoolbook font
+\documentclass{article}[12pt]
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}  
+\newtheorem{lemma}{Lemma}  
+\usepackage{pifont}
+\newtheorem{proof}{Proof}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{verbatim}
+%\usepackage{ctex}
+\usepackage{gauss}
+\usepackage{float}
+\usepackage[version=4]{mhchem}
+
+\begin{document}
+\noindent
+
+%========================================================================
+\noindent\framebox[\linewidth]{\shortstack[c]{
+\Large{\textbf{VE203 Assignment 5}}}}
+\begin{center}
+\footnotesize{\quad Name: YIN Guoxin\quad Student ID: 517370910043}
+
+
+\end{center}
+%=======================================================================
+
+\noindent \textbf{Q1.}
+\begin{enumerate}[(i)]
+\item 
+\begin{align*}
+&C_{13}^{2}C_{11}^{2}C_{9}^{2}A_7^7\\
+=&78\times 55\times 5040\\
+=&778377600
+\end{align*}
+\item For box $A_1$, it has $\binom{n}{n_1}$ ways to have $n_1$ objects in it. Then, for box $A_2$, it has $\binom{n-n_1}{n_2}$ ways to have $n_2$ objects in it. Then, similarly, for box $A_i$, $2\leq i\leq k$, we have $\binom{n-n_1-n_2-...-n_{i-1}}{n_i}$ ways to have $n_i$ objects in it. Using the product rule, the total number of ways is 
+\begin{align*}
+&\binom{n}{n_1}\times \binom{n-n_1}{n_2} \times ...\times \binom{n-n_1-n_2-...-n_{i-1}}{n_i}\\
+=&\frac{n!}{n_1!(n-n_1)!}\frac{(n-n_1)!}{n_2!(n-n_1-n_2)!}\times \frac{(n-n_1-...-n_{k-1})!}{n_k!0!}\\
+=&\frac{n!}{n_1!\cdots n_k!}
+\end{align*}
+\item $(\binom{5}{3}+\frac{\binom{5}{2}\times \binom{3}{2}}{2})\times 3!=150$.
+\end{enumerate}
+
+\noindent \textbf{Q2.}
+\begin{enumerate}[(i)]
+\item Suppose there exist two different identities $e_1\in G$ and $e_2\in G$, which means for all $x\in G$, we have $x\cdot e_1=e_1\cdot x=x$ and $x\cdot e_2=e_2\cdot x=x$. Since $e_1\in G$ and $e_2\in G$, we have 
+\begin{align*}
+e_2=e_2\cdot e_1=e_1\cdot e_2=e_1,
+\end{align*}
+which is contradicted to our assumption. Therefore, the identity element is unique.
+\item Suppose there exists a $x\in G$, such that it has two different inverse $a$ and $b$, which means $x\cdot a=a\cdot x=e$ and $x\cdot b=b\cdot x=e$, therefore, we have $x\cdot a=x\cdot b$, then according to left cancellation, we have $a=b$, which is contradicted to our assumption. Therefore, the inverse is unique.
+\end{enumerate}
+
+\noindent \textbf{Q3.}
+\begin{enumerate}[(i)]
+\item (036)(147)(258) and the order is 3.
+\item (28)(36)(014) and the order is 6.
+\item (132)(45), the order is 6.
+\item (13)(56), the order is 2.
+\end{enumerate}
+
+
+\noindent \textbf{Q4.}
+\begin{enumerate}[(i)]
+\item (16)(15)(12)(19)(13)(14)(12),it is odd.
+\item (07)(05)(03)(01)(08)(06)(04)(02), it is even.
+\item (04)(02)(01)(28)(29)(21)(18)(16)(15)(12)(13), it is odd.
+\item (10)(12)(97)(96)(95)(94)(07)(02)(04), it is odd.
+\end{enumerate}
+
+
+
+\noindent \textbf{Q5.}
+\begin{enumerate}[(i)]
+\item It is not a group since there doesn't exist the identity. Suppose there exist the identity called $e$, which satisfies $x=x\star e=e\star x=\sqrt{xe}, x\in \mathbb{R}$, which means $e=x$. However, since $x$ is arbitrary positive real number, we thus don't have one particular $e$ that satisfies $y=y\star e=e\star y=\sqrt{ye}, \forall y\in \mathbb{R}$.
+\item It is not a group since there doesn't exist the identity. Suppose there exist the identity called $e$, which satisfies $x=x\star e=\frac{x}{e}, x\in \mathbb{R}$, which means $e=1$. However, since it should also be satisfied that $x=e\star x=\frac{e}{x}=\frac{1}{x}$. If $e=1$, we should only have $x=\pm 1$. Since the identity should work well for all real numbers except 0, we reach the conclusion that it doesn't exist.
+\item It is not a group since the since the singular matrices whose determinant is 0 doesn't have inverse. 
+\item Yes, it is a group.
+\begin{itemize}
+\item For all $x,y,z\in G$, we have 
+\begin{align*}
+&x\star (y\star z)= \frac{x\times \frac{yz}{2}}{2}=\frac{xyz}{4}\\
+&(x\star y)\star z=\frac{\frac{xy}{2}\times z}{2}=\frac{xyz}{4}=x\star (y\star z)
+\end{align*}
+\item There exists $2\in G$, such that for all $x\in G$, we have 
+\begin{align*}
+x\star 2=\frac{x\times 2}{2}=x=\frac{2\times x}{2}=2\star x
+\end{align*}
+and for all $x\in G$, there exists $\frac{4}{x}\in G$, such that 
+\begin{align*}
+x\star \frac{4}{x}=\frac{x\times \frac{4}{x}}{2}=2=\frac{\frac{4}{x}\times x}{2}=\frac{4}{x}\star x
+\end{align*}
+\end{itemize}
+\end{enumerate}
+
+
+\noindent \textbf{Q6.}
+\begin{enumerate}[(i)]
+\item Suppose a two cycle is $(ab)$, and we are trying to turn it into a product of adjacent 2-cycles. Notice that since it is a two cycle, the order of $a$ and $b$ doesn't matter, so we can assume that $a<b$, namely, $a=b-k,\ k\not =0$ since if it equals to 0, we get $a=b$ and we can omit this 2-cycle. Therefore, if $a=b-1$, it is already a two cycle, so the number is 1. If $a=b-2$, $(ab)=((b-1)b)(a(b-1))((b-1)b)$, which is a product of adjacent 2-cycles and the number is 3. Note that if $a-b\geq 2$, we must have $(ab)=((b-1)b)(a(b-1))((b-1)b)$, therefore, if $(a(b-1))$ is \textbf{not} adjacent 2-cycles, it can still be continuously separated, each time we again get 3 cycles from the medium term until we make the most medium one an adjacent 2-cycle. From $(ab)=((b-1)b)(a(b-1))((b-1)b)$, the number of the medium term written as products of 2-cycles must be odd, it can be recursively defined since the side two terms are already adjacent, and 2 plus an odd number is still odd.
+\par From above, we know that to rewrite a 2-cycle into the product of adjacent 2-cycles, the number of the adjacent ones must be odd. Therefore, if $\sigma$ is originally written in odd number of 2-cycles, since odd times odd is still odd, we can rewrite $\sigma$ into a product of an odd number of 2-cycles. Otherwise, since even times odd is even, we can rewrite $\sigma$ from even number of 2-cycles into a product of even numbers of adjacent two cycles.
+\item Suppose in the original bijection $\sigma$, it points from $a\in [n]$ to $p\in [n]$ and from $b\in [n]$ to $q\in [n]$. Therefore, if $b<a$ (it cannot equal to $a$ due to $\sigma$ is a bijection). Originally, $b<a$ and $\sigma(b)=q>\sigma(a)=p$, so $(b,a)$ is in $P(\sigma)$. But if the bijection becomes $(pq)\sigma$, we have $b<a$ but $(pq)\sigma(b)=p<(pq)\sigma(a)=q$, therefore, $(b,a)$ isn't in $P(\sigma)$. We then have $P((p q) \sigma)=P(\sigma) - 1$. Similarly, if $b>a$, $\sigma(b)=q>\sigma(a)=p$, so $(a,b)$ isn't in $P(\sigma)$. But if the bijection becomes $(pq)\sigma$, we have $b>a$ but $(pq)\sigma(b)=p<(pq)\sigma(a)=q$, therefore, $(a,b)$ is in $P(\sigma)$. We then have $P((p q) \sigma)=P(\sigma) + 1$. From above, we have $P((p q) \sigma)=P(\sigma) \pm 1$.
+\item First, we know that a natural number is neither even or odd and not both. Therefore, if $\sigma$ can be written as a product of a natural number of 2-cycles, that natural number can either be even or odd and not both. We then only need to prove that the property of those natural numbers are unique, i.e. there cannot exist both even and odd numbers to represent one specific $\sigma$. We know that an even number can be written as an odd number plus an odd number. And from (i), we know that odd $\sigma$ can be written as a product of an odd number of 2-cycles and vice versa. Therefore, if one $\sigma$ can be written as both a product of an odd number of 2-cycles and a product of an even number of 2-cycles (suppose the even number is greater than the odd number and the other condition can be proved similarly), we can rewrite the product of an even number of 2-cycles into odd number of adjacent cycles composed with the original product of an odd number of 2-cycles, denoted this as $new\sigma$ and we know the $new\sigma$ is the same as $\sigma$ essentially. Then according to (ii), $P(new\sigma)$ must be different from $P(\sigma)$ since the number of $\pm 1$ is odd so their sum cannot be zero. Since the $new\sigma$ is the same as $\sigma$ essentially, $P(new\sigma)$ must be equal to $P(\sigma)$. Therefore, we conclude that no $\sigma \in S_{n}$ is both even and odd.
+\item Because $A_n$ is the subset of $S_n$, we know that we only need to prove that $A_n$ is a group. 
+\par Since the sum of two even numbers is even, we know that the composition of two even bijection is also even, so the result of composition is still in $A_n$. The proof below completes the proofs that $A_n$ is a group. 
+\begin{itemize}
+\item For all $x,y,z\in A_n$, because $A_n$ is the subset of $S_n$, $x,y,z\in S_n$. Since $S_n$ is a group, we know that for all $x,y,z\in S_n$, we have $x\cdot (y\cdot z)=(x\cdot y)\cdot z$, so the associativity also satisfies in $A_n$.
+\item The identity $e$ is also in $A_n$ since it can be written as a product of zero number of 2-cycle, and zero is even.
+\item The inverse is also even. Because if the original bijection is $(ab)(cd)...(jk)(lm)$, then the inverse of it is simply inverse the order of those cycles, i.e. $(lm)(jk)...(cd)(ab)$, which also the same number of cycles, i.e. it must be even since the original one is even bijection. The reason why their composition is $e$ is because, $(ab)(cd)...(jk)(lm)(lm)(jk)...(cd)(ab)$, due to the associativity, we can first calculate the most middle two cycles, which is $e$, and we can omit this $e$ and continue this methods, and finally we get $e$.
+\end{itemize}
+\item Denote the set of all odd bijections in $S_n$ as $B_n$. Since from (i), we know that odd $\sigma$ can be written as a product of an odd number of 2-cycles and vice versa. Therefore all even bijections composed with one adjacent cycle becomes odd bijections.
+\par 
+Then, different even bijections $\sigma_1,\sigma_2\in A_n$ composed with same adjacent cycle $(pq)$ becomes different odd bijections, otherwise we use left-cancellation for $(pq)\sigma_1=(pq)\sigma_2$ to get $\sigma_1=\sigma_2$. 
+\par And all odd bijections $\sigma_3\in B_n$ can come from one adjacent cycle $(pq)$ composed with an even bijections. This adjacent cycle is just $(pq)\sigma_3$ and $(pq)(pq)\sigma_3=\sigma_3$.\par 
+Therefore, $|A_n|=|B_n|$. Since $|S_n|=n!$, we have $\left|A_{n}\right|=\frac{n !}{2}$.
+\end{enumerate}
+\noindent \textbf{Q7.}
+\begin{enumerate}
+\item 
+\begin{align*}
+&x^5yx^{-5}=x^4(xyx^{-1})x^{-4}
+=x^4y^2x^{-4}
+=x^4yyx^{-4}
+=x^4yx^{-1}xyx^{-4}\\
+=&x^3(xyx^{-1})(xyx^{-1})x^{-3}
+=x^3(yy)(yy)x^{-3}=x^2(xyx^{-1})(xyx^{-1})(xyx^{-1})(xyx^{-1})x^{-2}\\
+=&x^2(yy)(yy)(yy)(yy)x^{-2}
+=x(xyx^{-1})(xyx^{-1})(xyx^{-1})(xyx^{-1})(xyx^{-1})(xyx^{-1})(xyx^{-1})(xyx^{-1})x^{-1}\\
+=&x(yy)(yy)(yy)(yy)(yy)(yy)(yy)(yy)x^{-1}\\
+=&xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}xyx^{-1}\\
+=&(y^2)^{16}\\
+=&y^{32}
+\end{align*}
+\item 
+\begin{align*}
+x^5yx^{-5}&=y^{32}\\
+eyx^{-5}x^5&=y^{32}x^5\\
+ye&=y^{32}\\
+e&=y^{31},
+\end{align*}
+hence, the order of $y$ is 31.
+\end{enumerate}
+\noindent \textbf{Q8.}
+In the group $S_4$, suppose $x=(0231)$ and $y=(132)$. Thus, for $n=2$, 
+\begin{align*}
+&xy=(0231)(132)=(02)\rightarrow
+(xy)^2=(02)(02)=e\\
+&x^2=(0231)(0231)=(03)(12), y^2=(132)(132)=(123)\rightarrow x^2y^2=(032)\not=e,
+\end{align*}
+as we can see, they are not equal.\\ \\
+\noindent \textbf{Q9.}
+Since $(G, \cdot)$ is a group, for all $x,y\in G$, we have $xy\in G$. Therefore, we have $e=(xy)^2=(xy)(xy)=(xyx) y=x(yx)y$. Then, 
+$
+xey=x\cdot x(yx)y\cdot y$ and therefore $
+xy=e(yx)e=yx
+$, which means that $(G, \cdot)$ is abelian. 
+\\ \\
+\noindent \textbf{Q10.}
+We know that $D_4=\{e,(13),(02),(01)(23),(02)(13),(03)(12),(0123),(0321)\}$. To find its subgroup, we need to find its the subset $H$ of it that $(H,\cdot)$ is a group. They are listed below,
+\begin{align*}
+&H_1=\{e\}\\
+&H_2=\{e,(13)\}\\
+&H_3=\{e,(02)\}\\
+&H_4=\{e,(01)(23)\}\\
+&H_5=\{e,(02)(13)\}\\
+&H_6=\{e,(03)(12)\}\\
+&H_7=\{e,(01)(23),(02)(13),(03)(12)\}\\
+&H_8=\{e,(13),(02),(02)(13)\}\\
+&H_9=\{e,(02)(13),(0123),(0321)\}\\
+&H_{10}=D_4\\
+\end{align*}
+
+
+
+
+
+
+
+%========================================================================
+\end{document}

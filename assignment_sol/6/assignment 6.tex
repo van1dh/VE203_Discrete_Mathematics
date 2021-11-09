@@ -1,0 +1,195 @@
+\newcommand{\plogo}{\fbox{$\mathcal{PL}$}} % Generic dummy publisher logo
+
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage{fouriernc} % Use the New Century Schoolbook font
+\documentclass{article}[12pt]
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}  
+\newtheorem{lemma}{Lemma}  
+\usepackage{pifont}
+\newtheorem{proof}{Proof}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{verbatim}
+%\usepackage{ctex}
+\usepackage{gauss}
+\usepackage{float}
+\usepackage[version=4]{mhchem}
+
+\begin{document}
+\noindent
+
+%========================================================================
+\noindent\framebox[\linewidth]{\shortstack[c]{
+\Large{\textbf{VE203 Assignment 6}}}}
+\begin{center}
+\footnotesize{\quad Name: YIN Guoxin\quad Student ID: 517370910043}
+
+
+\end{center}
+%=======================================================================
+
+\noindent \textbf{Q1.}
+\begin{enumerate}[(i)]
+\item 
+To prove that $\star$ is a well-defined function, we need to prove that for $a,b,c,d\in G$, if $aH=cH$ and $bH=dH$, then $(aH)\star (bH)=(cH)\star (dH)$, i.e. $(a \cdot b) H=(c \cdot d) H$. 
+\par We first prove that if $H\leq G$, $h\in H$, then $hH=H$. This comes from if $x\in hH$, then $x=hh_1$ for $h_1\in H$. Since both $h,h_1\in H$, $x=hh_1\in H$, which means $hH\subseteq H$. If $x\in H$, then $x=hh^{-1}x$, since $h^{-1}\in H$ due to $h\in H$ and also $x\in H$, we have $h^{-1}x\in H$. Therefore, $x\in hH$, which means $H\subseteq hH$. Therefore, if $H\leq G$, $h\in H$, then $hH=H$. This comes from if $x\in hH$, then $x=hh_1$ for $h_1\in H$.
+\par If $H$ is normal, we must have for $a\in G,H\leq G, h_1,h_2\in H$, $aH=Ha$. If $x\in aH$, then $x=ah_1=ah_1a^{-1}a$. Since $ah_1a^{-1}\in H$, we have $x\in Ha$, which means $aH\subseteq Ha$. Similarly, if $x\in Ha$, then $x=h_2a=aa^{-1}h_2a$. Since $a\in G$ , we have $a^{-1}\in G$, then $a^{-1}h_2a\in H$, we have $x\in aH$, which means $Ha\subseteq aH$. Therefore, $aH=Ha$.
+\par Since $aH=cH$, we must have $a=ae=ch_1$ for $h_1\in H$ and $b=be=dh_2$ for $h_2\in H$. Then $(a \cdot b) H=(c\cdot h_1\cdot d\cdot h_2)H=(c\cdot h_1\cdot d)(h_2H)=(c\cdot h_1\cdot d)H=(c\cdot h_1)Hd=c(h_1H)d=cHd=(c\cdot d)H$, which means it is a well-defined function.
+
+\begin{itemize}
+\item For $a,b,c\in G$, $((a H) \star(b H))\star (cH)=((a \cdot b) H)\star (cH)=((a \cdot b)\cdot c) H=(a \cdot (b\cdot c)) H=(aH)\star ((b\cdot c)H)=(aH)\star ((bH)\star (cH))$.
+\item $(eH)$ is the identity element in $X$, where $e$ is the identity element $e\in G$. It is followed from $(a H) \star(e H)=(e H) \star(a H)=(a \cdot e) H=(e \cdot a) H=aH$.
+\item For $a\in G$, $a^{-1}\in G$, therefore, for $aH\in X$, we can find $a^{-1}H\in X$ such that $(aH)\star (a^{-1}H)=(a^{-1}H)\star(aH)=eH$.
+\end{itemize}
+\item 
+%$H=\{e,(012),(021)\}$ is a subgroup of $S_3$, but $(X,\star)$ is not a group because the $\star$ here isn't well-defined. For example, we can have $a=e_{S_3},b=(012),c=(012),d=(012)$, which means $aH=H=cH$, $bH=dH$. However, since $a\cdot b=(012)\not=c\cdot d=(021)$, the $\star$ here isn't well-defined.
+$D_4=\{e,(13),(02),(01)(23),(02)(13),(03)(12),(0123),(0321)\}$ is a subgroup of $S_4$ but $(X,\star)$ is not a group because the $\star$ here isn't well-defined. For example, we can have $a=e_{S_4},b=(01),c=(0123),d=(01)$, which means $aH=H=cH$, $bH=dH$. However, since $a\cdot b=(01),
+c\cdot d=(023)$, we have $(a \cdot b) H\not=(c \cdot d) H$, hence
+the $\star$ here isn't well-defined.
+\end{enumerate}
+
+
+\noindent \textbf{Q2.}
+To begin with, the matrix multiplication is a well-defined function, which send the product of two $2\times 2$ matrices into one $2\times 2$ matrix.
+\begin{itemize} 
+\item For all $x,y,z\in G$, suppose $x=\bigl( \begin{smallmatrix} a & b \\ c & d \end{smallmatrix} \bigr)$, $y=\bigl( \begin{smallmatrix} e & f \\ g & h \end{smallmatrix} \bigr)$, $z=\bigl( \begin{smallmatrix} m &n \\ p & q \end{smallmatrix} \bigr)$, we have 
+\begin{align*}
+x\star (y\star z)
+&=\left( \begin{matrix}a & b\\c & d\end{matrix}\right) \star  \left( \begin{matrix}em+fp & en+fq\\gm+hp & gn+hq\end{matrix}\right)\\
+&= \left( \begin{matrix}aem+afp+bgm+bhp & aen+afq+bgn+bhq\\cgm+chp+dgm+dhp & cgn+chq+dgn+dhq\end{matrix}\right)\\
+(x\star y)\star z,
+&= \left( \begin{matrix}ae+bg & af+bh\\ce+dg & cf+dh\end{matrix}\right)\star \left( \begin{matrix}m & n\\p & q\end{matrix}\right)\\
+&= \left( \begin{matrix}aem+bgm+afp+bhp & aen+bgn+afq+bhq\\cgm+dgm+chp+dhp & cgn+dgn+chq+dhq\end{matrix}\right)\\
+&=x\star (y\star z).
+\end{align*}
+\item There exists an identity, which is the identity matrix $e=\bigl( \begin{smallmatrix} 1 & 0 \\ 0 & 1 \end{smallmatrix} \bigr)\in G$, such that for all $x=\bigl( \begin{smallmatrix} a & b \\ c & d \end{smallmatrix} \bigr)\in G$, we have 
+\begin{align*}
+x\star e=\left( \begin{matrix}a & b\\c & d\end{matrix}\right) \star \left( \begin{matrix}1 & 0\\0& 1\end{matrix}\right)=\left( \begin{matrix}1 & 0\\0& 1\end{matrix}\right)\star \left( \begin{matrix}a & b\\c & d\end{matrix}\right)=e\star x =\left( \begin{matrix}a & b\\c & d\end{matrix}\right) =x.
+\end{align*}
+And for all $x=\bigl( \begin{smallmatrix} a & b \\ c & d \end{smallmatrix} \bigr)\in G$, there exists $a=\bigl( \begin{smallmatrix} \frac{d}{ad-bc} & \frac{b}{bc-ad} \\ \frac{c}{bc-ad} & \frac{a}{ad-bc} \end{smallmatrix} \bigr)\in G$ such that $x\star a=a\star x=e$.
+\end{itemize}
+\par $A=\bigl( \begin{smallmatrix} 0 & 1 \\ -1 & -1 \end{smallmatrix} \bigr)$, $A^2=\bigl( \begin{smallmatrix} -1 & -1 \\ 1 & 0\end{smallmatrix} \bigr)$ and $A^3=\bigl( \begin{smallmatrix} 1 & 0 \\ 0 & 1\end{smallmatrix} \bigr)=e$, which means the order of $A$ is 3.
+\par
+$B=\bigl( \begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix} \bigr)$, $B^2=\bigl( \begin{smallmatrix} -1 & 0 \\ 0 & -1\end{smallmatrix} \bigr)$, $B^3=\bigl( \begin{smallmatrix} 0 & 1 \\ -1 &0\end{smallmatrix} \bigr)=e$, and $B^4=\bigl( \begin{smallmatrix} 1 & 0 \\0 &1\end{smallmatrix} \bigr)=e$,
+which means the order of $B$ is 4.
+\par
+$A\cdot B=\bigl( \begin{smallmatrix} 1& 0 \\ -1 & 1 \end{smallmatrix} \bigr)$, $(A\cdot B)^2=\bigl( \begin{smallmatrix} 1 & 0 \\ -2 & 1\end{smallmatrix} \bigr)$, $(A\cdot B)^3=\bigl( \begin{smallmatrix} 1 & 0 \\ -3 &1\end{smallmatrix} \bigr)=e$, and we guess that $(A\cdot B)^n=\bigl( \begin{smallmatrix} 1 & 0 \\ -n &1\end{smallmatrix} \bigr)$. Suppose that for $k\leq 3,k\in \mathbb{N}$, we have $(A\cdot B)^k=\bigl( \begin{smallmatrix} 1 & 0 \\ -k &1\end{smallmatrix} \bigr)$, then
+$(A\cdot B)^{k+1} =\bigl( \begin{smallmatrix} 1 & 0 \\ -k &1\end{smallmatrix} \bigr)\cdot \bigl( \begin{smallmatrix} 1& 0 \\ -1 & 1 \end{smallmatrix} \bigr)=\bigl( \begin{smallmatrix} 1 & 0 \\ -(k+1) &1\end{smallmatrix} \bigr)$.
+which means the order of $A\cdot B$ is infinity. 
+\\ \\
+\noindent \textbf{Q3.}
+Since $( \begin{smallmatrix} 0 & 1 &0&0\\ 0 & 0&0&1\\0&0&1&0\\1&0&0&0 \end{smallmatrix} \bigr)^2=( \begin{smallmatrix} 0 & 0 &0&1\\ 1 & 0&0&0\\0&0&1&0\\0&1&0&0 \end{smallmatrix} \bigr)$, $( \begin{smallmatrix} 0 & 1 &0&0\\ 0 & 0&0&1\\0&0&1&0\\1&0&0&0 \end{smallmatrix} \bigr)^3=( \begin{smallmatrix} 1 & 0 &0&0\\ 0 & 1&0&0\\0&0&1&0\\0&0&0&1 \end{smallmatrix} \bigr)$, which means $n=3$.
+\\ 
+
+
+
+
+
+
+\noindent \textbf{Q4.}
+Since $p$ is prime, $p>1$.
+Since $\varphi(p^k)$ is the number of $0<m<p^k$ such that $m$ and $p^k$ are relatively prime. Since we know that for $a=p\times n$ such that $1\leq n\leq p^{k-1}-1$, we have $0<a<p^k$ such that the common divisor of $p^k$ and $a$ is at least $p$, which means they are not relatively prime. And the number of $a$ is simply $p^{k-1}$ since the choice of the natural number $n$ is from 1 to $p^{k-1}-1$. For those numbers $c$ such that $1<c<p^k$ but $c\not =p\times n$, the greatest common divisor of $c$ and $p^k$ is 1. This is because the divisor of $p^k$ is 1 and $p^b$ such that $0\leq b\leq k-1$ since $p$ is prime, the latter of which can be interpreted as $a$ but $c$ cannot be one of $a$. Therefore, $c$ and $p^k$ are relatively prime. Therefore, $\varphi(p^k)$ is the total number of numbers such that $0<m<p^k$ minus the number of $a$, which is 
+\begin{align*}
+\varphi\left(p^{k}\right)=p^{k}-p^{k-1}.
+\end{align*}
+
+
+
+\noindent \textbf{Q5.}
+Since $n^{4}+3 n^{2}+1=n(n^3+2n)+n^2+1$, $n^3+2n=n(n^2+1)+n$ and $n^2+1=n\cdot n +1$, gcd ($n^{4}+3 n^{2}+1,n^3+2n)=$gcd ($n^3+2n,n^2+1)$=gcd($n^2+1,n$)=gcd($n,1)$=1.  Therefore, $n^{4}+3 n^{2}+1,n^3+2n $ and $n^3+2n,n^2+1$ are relatively prime.
+\\ \\
+\noindent \textbf{Q6.}
+Suppose a cyclic group ($\left\langle a\right\rangle,\cdot)$, where $\left\langle a\right\rangle=\{a^m|m\in \mathbb{Z}\}$, and $H\leq \left\langle a\right\rangle$. If $H=\{e\}$, it is obvious that it is a cyclic group $C_1$. If $H\not=\{e\}$, since $H\subseteq \left\langle a\right\rangle$, all the elements in $H$ can be written in the form of $a^p$. And we denote the $\leq-$least exponential number $p$ as $k$. Therefore, for any element $a^n$ in $H$, by the Division Algorithm, we can write $n=mk+r$, where $0\leq r<k$. Therefore,  $a^r=a^{n-mk}=a^n\cdot a^{-mk}=a^n\cdot (a^{-m})^k$. Since $a^m\in H$, since the inverse $a^{-m}$ of the element $a^m\in H$ must also be in $H$. Besides, because the group is enclosed by the group operation $\cdot$, the product of $a^{-m}$ to the power of $k$ also exists in $H$. Due to the same reason, the product of $a^n$ and $(a^{-m})^k$ also exists in $H$, i.e. $a^r\in H$. But our assumption is that $m$ is the $\leq-$least exponential number $p$ since $r<m$. Therefore, $r$ must be zero to make $a^r=e$. Therefore, we have $n=mk$ and $a^n=(a^k)^m$, which means all the elements in $H$ can be written in the form of power of $a^k$, which means $H=\left\langle a^k \right\rangle$.\\
+
+\noindent \textbf{Q7.}
+To prove the statement, we only need to show that for $a,b,c\in \mathbb{N}$, if $3\not|ab$, then $a^2+b^2\not=c^2$. \par If $3\not|ab$, it means that $3\not|a$ and $3\not|b$, which means that $a\equiv \pm 1$ (mod 3) and $b\equiv \pm 1$ (mod 3). Therefore, $a^2\equiv 1$(mod 3) and $b\equiv \pm 1$ (mod 3), which means $a^2+b^2=c^2\equiv 2$(mod 3), i.e. $c^2=3k+2$ for $k\in \mathbb{N}$. However, this leads to contradiction since $3k+2$ cannot be a perfect square. \par To prove it, suppose $3k+2=m^2$ for $m\in \mathbb{N}$. Therefore, we have $2=m^2-3k=(m+\sqrt{3k})(m-\sqrt{3k})$. Hence, $m+\sqrt{3k}=2$ and $ m-\sqrt{3k} =1$, which means $ m=\frac{3}{2} $, which is not a natural number. Therefore, we won't have $ a^2+b^2=c^2 $ for $a,b,c\in \mathbb{N}$ if $3\not|ab$.
+\\ 
+
+\noindent \textbf{Q8.}
+
+Since $\left((\mathbb{Z} / 11 \mathbb{Z})^{*}, \otimes_{11}\right)$ has order of 10, by Lagrange's Theorem, the only possible orders for its elements are 1,2,5 and 10.\par
+Start with 2, $[2]_{11}^{2}=[4]_{11}$, $[2]_{11}^{5}=[10]_{11}$, $[2]_{11}^{10}=[1]_{11}$, therefore, $\left\langle[2]_{11}\right\rangle=\left((\mathbb{Z} / 11 \mathbb{Z})^{*}, \otimes_{11}\right)$, 2 is a generator of $\left((\mathbb{Z} / 11 \mathbb{Z})^{*}, \otimes_{11}\right)$.
+\\ \\
+\noindent \textbf{Q9.}
+Suppose the inverse of $[12]_{89}$ is $[m]_{89}$. Therefore, we must have $12m\equiv 1$ (mod 89), which means $12m=89k+1$, for $k\in \mathbb{N}$. 
+\begin{align*}
+89&=7\cdot 12+5\\
+12&=2\cdot 5+2\\
+5&=2\cdot 2+1\\
+1&=5-2\cdot 2=5-2\cdot (12-2\cdot 5)=5\cdot 5-2\cdot 12\\
+&=5\cdot(89-7\cdot 12)-2\cdot 12\\
+&=5\cdot 89 -37\cdot 12\\
+[1]_{89}&=[-37]_{89}\otimes [12]_{89}\\
+[1]_{89}&=[52]_{89}\otimes [12]_{89}
+\end{align*}
+Through calculation, I find that when $m$=52, we have $12\times 52=624=89\times 7+1$. Therefore, the inverse of $[12]_{89}$ is $[52]_{89}.$
+\\ \\
+\noindent \textbf{Q10.}
+Since $2|56,7|56$, \begin{align*}
+\varphi(56)=56\cdot(1-\frac{1}{2})(1-\frac{1}{7})=24
+\end{align*}
+Therefore the order of $\left((\mathbb{Z} / 56 \mathbb{Z})^{*}, \otimes 56\right)$ is 24. By Lagrange Theorem, the order of $[27]_{56}$ is 1,2,3,4,6,8,12,24. Now, $27^2=729$, since $729\equiv 1$ (mod 56), therefore, the order of it is 2.
+\\ \\
+\noindent \textbf{Q11.}
+The Cayley Table of $\left((\mathbb{Z} / 9 \mathbb{Z})^{*}, \otimes_{9}\right)$ is 
+\begin{table} [H]
+$$\begin{array}{|c||c|c|c|c|c|c|}
+\otimes_{9} & [1]_9 & [2]_9 & [4]_9 & [5]_9& [7]_9& [8]_9\\
+\hline\hline
+[1]_9 & [1]_9 & [2]_9  & [4]_9 & [5]_9 & [7]_9 & [8]_9\\
+
+[2]_9 & [2]_9 & [4]_9  & [8]_9 & [1]_9 & [5]_9 & [7]_9\\
+
+[4]_9 & [4]_9 & [8]_9  & [7]_9 & [2]_9 & [1]_9 & [5]_9\\
+
+[5]_9 & [5]_9 & [1]_9  & [2]_9 & [7]_9 & [8]_9 & [4]_9\\
+
+[7]_9 & [7]_9 & [5]_9  & [1]_9 & [8]_9 & [4]_9 & [2]_9\\
+
+[8]_9 & [8]_9 & [7]_9  & [5]_9 & [4]_9 & [2]_9 & [1]_9\\
+\end{array}$$
+\end{table}
+Yes, it is cyclic. Since it is a group with order 6, the possible order of its elements are 1,2,3,6. For the element $[2]_9$ in it, we can see that $([2]_9)^2=[4]_9,([2]_9)^3=[8]_9$, which means the order of it must be greater than 3. Therefore, the only choice of this element is 6, which means the group is cyclic.\\ \\
+\noindent \textbf{Q12.}
+\begin{enumerate}[(i)]
+\item Denote the gcd$(s,n)=g$, then $s=cg$ and $n=mg$ for $c\in \mathbb{N}$ and gcd($c,m)$=1, then we have, 
+\begin{align*}
+a^{sm}=a^{s\frac{n}{\rm{gcd}(s,n)}}=a^{cn}=(a^n)^b=e^c=e.
+\end{align*}
+Suppose $0<p\leq n$ such that $a^{sp}=e$ and $p$ is the $\leq-$least such thing, i.e. the order of $b$ is $p$. Then $p|n=p|(mg)$ by Lagrange Theorem and $n|sp$ since the order of $a$ is $n$. Rewrite $n|sp$ into $mg|(cg\cdot p)$. Factor out  $g$ and we have $m|cp$. Since gcd($c,m)=1$, we have $m|p$, which means $m\leq p$. Since $p$ is the $\leq-$least such thing, we must have $m=p$.
+%If $p$ isn't a common divisor of $s$ and $n$, which means $g$ and $p$ is relatively prime, we have $m=p$ from $p|mg$ ad $m|p$. If $p$ is a common divisor of $s$ and $n$, which means $n=dp,d\in \mathbb{N}$. Then from $dp|sp$, we must have $d|s$.
+\item Denote $\left\langle a^{t}\right\rangle_{G}$ as $C_x$ and$ \langle b\rangle_{G}$ as $C_m$. 
+\begin{itemize}
+\item If $\left\langle a^{t}\right\rangle_{G}=\langle b\rangle_{G}$, the order of these two groups must be the same, which means 
+\begin{align*}
+m=\frac{n}{\operatorname{gcd}(s, n)}=x=\frac{n}{\operatorname{gcd}(t, n)},
+\end{align*}
+which means $\operatorname{gcd}(s, n)=\operatorname{gcd}(t, n)$.
+\item If $\operatorname{gcd}(s, n)=\operatorname{gcd}(t, n)$, then $x=m$, i.e. the order of this two groups are the same. 
+We will prove that $\left\langle a^{t}\right\rangle_{G}=\left\langle a^{g}\right\rangle_{G}=\langle a^{s}\rangle_{G}$, where $g=\operatorname{gcd}(s, n)=\operatorname{gcd}(t, n)$. 
+\par For every element $a^{us}$ in $\left\langle a^{s}\right\rangle_{G}$, since $s=cg$, we know that $a^{us}=a^{ucg}=(a^g)^{uc}$, which means it must be an element in $\left\langle a^{g}\right\rangle_{G}$. For each element $a^wg$ in $\left\langle a^{g}\right\rangle_{G}$, by B{\'e}Zout's Lemma, $g=xs+yn$, then $a^wg=a^{w(xs+yn)}=a^{wxs}a^{wyn}=(a^s)^{wy}(a^n)^{wy}=(a^s)^{wy}$, which means it must be an element in $\left\langle a^{g}\right\rangle_{G}$. Therefore, $\left\langle a^{g}\right\rangle_{G}=\langle a^{s}\rangle_{G}$. Similarly, we can prove that $\left\langle a^{g}\right\rangle_{G}=\langle a^{t}\rangle_{G}$. Therefore, $\left\langle a^{t}\right\rangle_{G}=\langle a^{s}\rangle_{G}$, i.e. $\left\langle a^{t}\right\rangle_{G}=\langle b\rangle_{G}$.  
+\end{itemize}
+
+
+\end{enumerate}
+
+
+
+
+
+
+%========================================================================
+\end{document}

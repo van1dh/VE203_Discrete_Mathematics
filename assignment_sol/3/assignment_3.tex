@@ -1,0 +1,244 @@
+\newcommand{\plogo}{\fbox{$\mathcal{PL}$}} % Generic dummy publisher logo
+
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage{fouriernc} % Use the New Century Schoolbook font
+\documentclass{article}[12pt]
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}  
+\newtheorem{lemma}{Lemma}  
+\usepackage{pifont}
+\newtheorem{proof}{Proof}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{verbatim}
+%\usepackage{ctex}
+\usepackage{gauss}
+\usepackage{float}
+\usepackage[version=4]{mhchem}
+
+\begin{document}
+\noindent
+
+%========================================================================
+\noindent\framebox[\linewidth]{\shortstack[c]{
+\Large{\textbf{VE203 Assignment 3}}}}
+\begin{center}
+\footnotesize{\quad Name: YIN Guoxin\quad Student ID: 517370910043}
+
+
+\end{center}
+%=======================================================================
+
+\noindent \textbf{Q1.}
+\begin{enumerate}
+\item We first prove that if there exists an injective function $f:\mathbb{N}\rightarrow A$, then the set $A$ is (Dedekind) infinite.
+\begin{itemize}
+\item Because $f:\mathbb{N}\rightarrow A$ is injective, then $|\mathbb{N}|=|C|$, where $C\subseteq A$ and this means there exists a bijective function that $g:\mathbb{N}\rightarrow C$. Suppose $C=\{c_0,c_1,c_2,...\}$ with $c_i$ related to $i$ in the natural numbers due to the bijection property of $g$. 
+\item For all $x\in A$, define a function $h$ such that if $x\not\in C$, $h(x)=x$, otherwise, $h(x)$ equals to the next element behind $x$, which means $h(c_0)=c_1,h(c_1)=c_2,...,h(c_n)=h(c_{n+1})$...and so on. Since the function $f$ makes $C$ bijective with $\mathbb{N}$, the function $h$ on $C$ is equal to $y(n)=n+1$ for all natural numbers $n$, which we know is not surjective since $y(n)$ cannot be zero. Therefore, $h(x)$ cannot be $c_0$ either.
+\item Therefore, we know that the function $h$ is injective (since it works on all $x\in A$) but not surjective (since $h(x)$ cannot be $c_0$.), which means $A$ is (Dedekind) infinite.
+\end{itemize}
+\item We then prove that if $A$ is (Dedekind) infinite, then there exists an injective function $f:\mathbb{N}\rightarrow A$. 
+\begin{itemize}
+\item Because $A$ is (Dedekind) infinite, then there exists $g:A\rightarrow A$ that is an injection but not a surjection. Suppose $a_0\in A$ and $a_0\not\in \rm{ran}\ g$, since $g$ is a function from $A$ to $A$, $g$ works on every element in $A$, including $a_0$, and we denote $g(a_0)=a_1\in A$. Due to the same reason, $g(a_1)=a_2$,..., $g(a_n)=a_{n+1}$ and so on, where $n$ is arbitrary natural numbers and $a_n\in A$.
+\item Therefore, we can find a function $f$ such that $f(n)=a_n$. For every $a_n\in A$, we can find $n$ because the process of finding $a_n$ in never stopped. Therefore, $f$ is surgective. In addition, since $g$ is injective, every $a_n$ is distinctive because their ancestor $a_{n-1}$ is distinctive. Therefore, $f$ is injective. 
+\item Form above, we know that $f$ is bijective. Since all $a_n\in A$, the set of $a_n$, denoted as $B$, is a subset of $A$. Therefore, the function $f:\mathbb{N}\rightarrow B$ is bijective, which means $|\mathbb{N}|=|B|$ and $B\subseteq A$, which means there exists an injective function $f:\mathbb{N}\rightarrow A$.
+\end{itemize}
+\end{enumerate}
+From above, we know that a set $A$ is (Dedekind) infinite iff there exists an injective function $f:\mathbb{N}\rightarrow A$.\\
+
+\noindent \textbf{Q2.}
+If the three expressions are equivalent, we need to prove that if one holds, the other two expressions also hold.
+\begin{enumerate}[(i)]
+\item If $a \preceq b$ holds, 
+\begin{itemize}
+\item then $b$ is the upper bound of $\{a,b\}$ (note that $b\preceq b$ according to reflexive property of a poset) and we only need to prove that $b$ is the least upper bound. Suppose $c$ is the l.u.b of $\{a,b\}$ and $c\not=b$. Because $c$ is l.u.b but $b$ is only one u.b, then $c\preceq b$. However, if $c$ is the l.u.b of $\{a,b\}$, $b\preceq c$. Therefore, by antisymmetry, $c=b$, which is a contradiction. Therefore, $b$ is the least upper bound of $\{a,b\}$, i.e. $a \vee b=b$.
+\item then $a$ is the lower bound of $\{a,b\}$ (note that $a\preceq a$ according to reflexive property of a poset) and we only need to prove that $a$ is the greatest lower bound. Suppose $c$ is the g.l.b of $\{a,b\}$ and $c\not=a$. Because $c$ is g.l.b but $a$ is only one l.b, then $a\preceq c$. However, if $c$ is the l.u.b of $\{a,b\}$, $c\preceq a$. Therefore, by antisymmetry, $c=a$, which is a contradiction. Therefore, $a$ is the greatest lower bound of $\{a,b\}$, i.e. $a \wedge b=a$.
+\end{itemize}
+\item If $a \vee b=b$, 
+\begin{itemize}
+\item then $a\preceq b$ according to the definition of l.u.b of a set.
+\item then $a\preceq b$ according to the definition of l.u.b of a set. And then $a$ is the lower bound of $\{a,b\}$ (note that $a\preceq a$ according to reflexive property of a poset) and we only need to prove that $a$ is the greatest lower bound. Suppose $c$ is the g.l.b of $\{a,b\}$ and $c\not=a$. Because $c$ is g.l.b but $a$ is only one l.b, then $a\preceq c$. However, if $c$ is the l.u.b of $\{a,b\}$, $c\preceq a$. Therefore, by antisymmetry, $c=a$, which is a contradiction. Therefore, $a$ is the greatest lower bound of $\{a,b\}$, i.e. $a \wedge b=a$.
+\end{itemize}
+\item If $a\wedge b=a$, 
+\begin{itemize}
+\item then $a\preceq b$ according to the definition of l.u.b of a set.
+\item then $a\preceq b$ according to the definition of l.u.b of a set. And then $b$ is the upper bound of $\{a,b\}$ (note that $b\preceq b$ according to reflexive property of a poset) and we only need to prove that $b$ is the least upper bound. Suppose $c$ is the l.u.b of $\{a,b\}$ and $c\not=b$. Because $c$ is l.u.b but $b$ is only one u.b, then $c\preceq b$. However, if $c$ is the l.u.b of $\{a,b\}$, $b\preceq c$. Therefore, by antisymmetry, $c=b$, which is a contradiction. Therefore, $b$ is the least upper bound of $\{a,b\}$, i.e. $a \vee b=b$.
+\end{itemize}
+\end{enumerate}
+
+\noindent \textbf{Q3.}
+$(a \vee b) \vee c=a \vee(b \vee c)$ is true because the L.H.S=R.H.S=the highest order of $\{a,b,c\}$. The details are shown below and we have already known from \textbf{Q2.} that $a\preceq b \Longleftrightarrow a\vee b=b$.
+\begin{enumerate}
+\item Suppose $a\preceq b \preceq c$, then $(a \vee b) \vee c=b\vee c=c$ and $a \vee(b \vee c)=a\vee c=c$, so they are equal. 
+\item Suppose $a\preceq c \preceq b$, then $(a \vee b) \vee c=b\vee c=b$ and $a \vee(b \vee c)=a\vee b=b$, so they are equal. 
+\item Suppose $b\preceq a \preceq c$, then $(a \vee b) \vee c=a\vee c=c$ and $a \vee(b \vee c)=a\vee c=c$, so they are equal. 
+\item Suppose $b\preceq c \preceq a$, then $(a \vee b) \vee c=a\vee c=a$ and $a \vee(b \vee c)=a\vee c=a$, so they are equal. 
+\item Suppose $c\preceq a \preceq b$, then $(a \vee b) \vee c=b\vee c=b$ and $a \vee(b \vee c)=a\vee b=b$, so they are equal. 
+\item Suppose $c\preceq b \preceq a$, then $(a \vee b) \vee c=a\vee c=a$ and $a \vee(b \vee c)=a\vee b=a$, so they are equal. 
+\end{enumerate}
+
+
+\noindent \textbf{Q4.}
+To prove that $\mathbb{N} \times \mathbb{N}$ is countable, we need to prove $|\mathbb{N} \times \mathbb{N}|\ leq |\mathbb{N}|$. Consider the function
+\begin{align*}
+f(a,b)=2^a3^b,\quad a,b\in\mathbb{N},
+\end{align*}
+since every natural number has a unique factorization into primes, we know for those natural numbers with only 2 or 3 prime factor, if $(a_1,b_1)$ and $(a_2,b_2)$ are distinct and $a_1,b_1,a_2,b_2\in\mathbb{N}$, $f(a_1,b_1)$ and $f(a_2,b_2)$ must be different due to the uniqueness of prime factorization. Therefore, the function $f$ is injective from $\mathbb{N} \times \mathbb{N}$ to $\mathbb{N}$, which means $|\mathbb{N} \times \mathbb{N}|\ \leq |\mathbb{N}|$, i.e. $\mathbb{N} \times \mathbb{N}$ is countable.\\
+
+
+\noindent \textbf{Q5.}
+\begin{enumerate}[(i)]
+\item 
+\begin{itemize}
+\item To prove that $S$ is countable, we need to prove $|S|\leq |\mathbb{N}|$, which means there exists a function $g:S\rightarrow \mathbb{N}$ that is an injection.\par
+From the definition of $S$, we know that the element in $S$ are those functions with \textit{n} elements in its domain ($\{0,1,..,n-1\}$, $n\in \mathbb{N}/\{0\}$ or $\emptyset)$ and exactly \textit{n} natural numbers in its range ($f(0),f(1),...,f(n-1)$, $n\in \mathbb{N}/\{0\}$ or $\emptyset$).\par
+Define the function $g:S\rightarrow \mathbb{N}$ such that 
+\begin{equation*}
+g(f)=\left\{
+\begin{array}{lcl}
+0 & & {dom\ f=\emptyset}\\
+2^{(f(0)+1)}3^{(f(1)+1)}5^{(f(2)+1)}7^{(f(3)+1)}\times ...\times i^{(f(n-1)+1)} & & {otherwise}\\
+\end{array} 
+\right.,
+\end{equation*}
+where $i$ is the $n$th smallest prime number. Because every natural number has a unique factorization into primes, every $g(f)$ is different if $f$ is different. In this way, we find the function $g:S\rightarrow \mathbb{N}$ that is an injection.
+\item Yes, $|S|=|\mathbb{N}|$. To prove this, because we have already found one injective function $g:S\rightarrow \mathbb{N}$, we only need to find another injective function $h:\mathbb{N}\rightarrow S$.\par 
+For every natural numbers greater than 0, it can be uniquely expressed as the product of prime numbers as below,
+\begin{align*}
+n=2^{n_0}3^{n_1}5^{n_2}\times ......
+\end{align*}
+Therefore, we can define the function $h:\mathbb{N}\rightarrow S$ as 
+\begin{equation*}
+h(n)=\left\{
+\begin{array}{lcl}
+f\ \rm{with\ domain=\emptyset\ and range= \emptyset}, & & {n=0}\\
+f\ \rm{with\ domain=range=}a & & {otherwise}\\
+\end{array} 
+\right.,
+\end{equation*}
+Particularly, when $n\not=0$, $a$ is the $a$th prime number such that it is the smallest prime factor that if any prime factor is bigger than it, the exponential of this bigger number is zero. Besides, the function $f$ is also determined by $f(0)=n_0,f(1)=n_1,...,f(n-1)=n_{a-1}$. Therefore, for any different natural numbers, we can find different functions $f\in S$ that corresponding to them because the prime factorization of one natural number is unique so that the permutation of the exponentials $n_i$ in the prime factorization of one specific natural number is unique. Therefore, the function $h$ is injective.\par 
+Therefore, we prove that $|S|=|\mathbb{N}|$.
+\end{itemize}
+\item \begin{itemize}
+\item Yes, it is partial order.
+\begin{enumerate}
+\item It is reflexive. For all $f\in S, f:[n]\rightarrow \mathbb{N}$, $A=[n]\cap [n]=[n]$ and $[n]\subseteq [n]$ always holds. Since $\forall i\in [n], (f(i)=f(i))\wedge [n]\subseteq [n]$, we have $f\preceq_1 f$.
+\item It is antisymmetric. For all $f,g\in S, f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}$, if $f\preceq_1 g$ and $g\preceq_1 f$, we have first $(\exists i \in A)(f(i)<g(i) \wedge(\forall j<i)(f(j)=g(j)))$ or $(\forall i \in A)(f(i)=g(i)) \wedge([n] \subseteq[m])$, and second $(\exists a \in A)(g(a)<f(a) \wedge(\forall j<a)(f(j)=g(j)))$ or $(\forall a \in A)(f(a)=g(a)) \wedge([m] \subseteq[n])$, $A=[n]\cap [m]$. Suppose $f\not=g$.
+To satisfy the first condition, \par 
+suppose we have $(\exists i \in A)(f(i)<g(i) \wedge(\forall j<i)(f(j)=g(j)))$. 
+Because there exists an inequality, we must have $(\exists a \in A)(g(a)<f(a) \wedge(\forall j<a)(f(j)=g(j)))$ to satisfy the second condition. Define $n=\min(i,a)$ (and we suppose $n=a$ here and another condition can be proved similarly), for $j$ from 0 to $n-1$, $f(j)=g(j) $. But the first condition says $f(n)=g(n)$ if $a<i$ and $f(n)<g(n)$ if $a=i$, both are contradicted to what the second condition says, which is $f(n)>g(n)$. So this assumption leads to contradiction.\par
+Suppose we have $(\forall i \in A)(f(i)=g(i)) \wedge([n] \subseteq[m])$ to satisfy the first condition, because there doesn't exist any inequality, we must have $(\forall a \in A)(f(a)=g(a)) \wedge([m] \subseteq[n])$, $A=[n]\cap [m]$ to satisfy the second condition. To satisfy both condition, we then must have $[n]=[m]$ to satisfy $[n] \subseteq[m]$ and $[m] \subseteq[n]$. Then the two condition becomes $(\forall i \in A)(f(i)=g(i)) \wedge([m] =[n])$, which means $f=g$, and this is also a contradiction.\par 
+From above, we know that it is antisymmetry.
+\item It is transitive. For all $f,g,h\in S, f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}, h:[p]\rightarrow \mathbb{N}$, if $f\preceq_1 g$ and $g\preceq_1 h$, we have first $(\exists i \in A)(f(i)<g(i) \wedge(\forall j<i)(f(j)=g(j)))$ or $(\forall i \in A)(f(i)=g(i)) \wedge([n] \subseteq[m])$, and second $(\exists a \in B)(g(a)<h(a) \wedge(\forall j<a)(h(j)=g(j)))$ or $(\forall a \in B)(h(a)=g(a)) \wedge([m] \subseteq[p])$, $A=[n]\cap [m]$ and $B=[m]\cap [p]$. 
+\begin{itemize}
+\item If $(\exists i \in A)(f(i)<g(i) \wedge(\forall j<i)(f(j)=g(j)))$ and $(\exists a \in B)(g(a)<h(a) \wedge(\forall j<a)(h(j)=g(j)))$ hold, then $(\exists b=\min(i,a) \in ([n]\cap [p])(f(b)<h(b) \wedge(\forall j<b)(f(j)=g(j)=h(j)))$, which means $f\preceq_1 h$.
+\item If $(\exists i \in A)(f(i)<g(i) \wedge(\forall j<i)(f(j)=g(j)))$ and $(\forall a \in B)(h(a)=g(a)) \wedge([m] \subseteq[p])$ hold, then we know $\forall i\in [m],h(i)=g(i).$ Therefore, 
+$(\exists i \in ([n]\cap [p])(f(i)<h(i) \wedge(\forall j<i)(f(j)=g(j)=h(j)))$, which means $f\preceq_1 h$.
+\item If $(\forall i \in A)(f(i)=g(i)) \wedge([n] \subseteq[m])$ and $(\exists a \in B)(g(a)<h(a) \wedge(\forall j<a)(h(j)=g(j)))$ hold, then we know $\forall i\in [n],h(i)=g(i).$ Therefore, either $(\forall i \in ([n]\cap [p]))(f(i)=h(i)) \wedge([n] \subseteq[p])$ or $(\exists a \in ([n]\cap [p])(f(a)<h(a) \wedge(\forall j<a)(f(j)=g(j)=h(j)))$, and both of which mean $f\preceq_1 h$.
+\item If $(\forall i \in A)(f(i)=g(i)) \wedge([n] \subseteq[m])$ and $(\forall a \in B)(h(a)=g(a)) \wedge([m] \subseteq[p])$ hold, then we know $\forall i\in [n],h(i)=g(i)$ and  $\forall i\in [m],h(i)=g(i)$ and $[n]\subseteq [p]$. Therefore, we have $(\forall i \in ([n]\cap [p]))(f(i)=h(i)) \wedge([n] \subseteq[p])$, which means $f\preceq_1 h$.
+\end{itemize}
+From above, we know that for all $f,g,h\in S, f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}, h:[p]\rightarrow \mathbb{N}$, if $f\preceq_1 g$ and $g\preceq_1 h$, we have $f\preceq_1 h$. 
+\end{enumerate}
+\item Yes, it is linear order. We are going to prove that for all $f,g\in S, f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}$, if $f\not\preceq_1 g$, we must have $g\preceq_1 f$. Because if we have equality of $g(i)$ and $f(i)$, the subset relation must be $[m]\subset[n]$ to fail $f\preceq g$. If we have inequality, the $(\forall i \in A)(f(i)=g(i)) \wedge([n] \subseteq[m])$ has been failed already obviously. Then to fail $(\exists i \in A)(f(i)<g(i) \wedge(\forall j<i)(f(j)=g(j)))$, we can find a smallest number $i$ in $A$ such that $f(i)>g(i) \wedge(\forall j<i)(f(j)=g(j))$.\par 
+Therefore, if $f\not\preceq_1 g$, we have either $(\forall i \in A)(f(i)=g(i)) \wedge([m] \subset[n])$ or $(\exists i \in A)(f(i)>g(i) \wedge(\forall j<i)(f(j)=g(j)))$. 
+\par The first condition ensures that $(\forall i \in A)(f(i)=g(i)) \wedge([m] \subseteq[n])$, which means $g\preceq_1 f$.
+\par The second condition ensures that $(\exists i \in A)(g(i)>f(i) \wedge(\forall j<i)(f(j)=g(j)))$, which means $g\preceq_1 f$.
+\item No, it isn't chain complete. Since $S$ itself is a chain and it is infinite, we cannot find the l.u.b of $S$.
+\item Yes, it is a lattice. For all $f,g\in S$, since $\left(S, \preceq_{1}\right)$ is a linear order, we can assume $g\preceq_1 f$ ($f\preceq_1 g$ can be proved similarly). Then $f\vee g=f$ and $f\wedge g=g$ according to \textbf{Q2.}.
+\item Yes, it is a well-order. Since $\left(S, \preceq_{1}\right)$ is a linear order, every two elements in $S$ are related, and it is similar to ($\mathbb{N},\leq$), every non-empty subset $A$ of $S$ except itself is finite, so there must be a least element in $A$. As for itself, we have the function that applies on $\emptyset$ such that it is the least element in the whole $S$.
+\end{itemize}
+\item 
+\begin{itemize}
+\item Yes, it is a partial order.
+\begin{enumerate}
+\item It is reflexive. For all $f\in S, f:[n]\rightarrow \mathbb{N}$, $[n]\subseteq [n]$ always holds. Since $\forall i\in [n], (f(i)=f(i))$, we have $f\preceq_2 f$.
+\item It is antisymmetric. For all $f,g\in S, f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}$, if $f\preceq_2 g$ and $g\preceq_2 f$, we have first $[n] \subseteq[m]$ and $(\forall i \in[n])(f(i) \leq g(i))$, and second $[m] \subseteq[n]$ and $(\forall i \in[m])(f(i) \leq g(i))$. Suppose $f\not=g$. To satisfy both conditions, we must have $[n]=[m]$ and $(\forall i \in[n]=[m])(g(i) = f(i))$, which means $f=g$. Therefore, we know that it is antisymmetry.
+\item It is transitive. For all $f,g,h\in S, f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}, h:[p]\rightarrow \mathbb{N}$, if $f\preceq_2 g$ and $g\preceq_2 h$, we have first $[n] \subseteq[m]$ and $(\forall i \in[n])(f(i) \leq g(i))$, and second $[m] \subseteq[p]$ and $(\forall i \in[m])(g(i) \leq h(i))$. To satisfy both conditions, we must have $[n] \subseteq[p]$ and $(\forall i \in[n])(f(i)\leq g(i) \leq h(i))$. Therefore, we know that for all $f,g,h\in S, f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}, h:[p]\rightarrow \mathbb{N}$, if $f\preceq_2 g$ and $g\preceq_2 h$, we have $f\preceq_2 h$. 
+\end{enumerate}
+\item No, it isn't chain complete, since we cannot find a natural number that is greater or equal to any other natural numbers so that we cannot satisfy $[n]\subseteq [m]$.
+\item Yes, it is a lattice.\par 
+For all $f,g\in S,f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}$, we can find a function $h\in S,h:[p]\rightarrow \mathbb{N}$ such that $[p] =[n] $ if $[n]\subseteq [m]$ or $[p] =[m] $ if $[m]\subseteq [n]$, and $(\forall i \in[p])(h(i) = \min(h(i),g(i)))$. Therefore, we know that $h$ is the lower bound of $\{f,g\}$. Suppose there exists any other lower bound $y\in S,y:[q]\rightarrow \mathbb{N}$ such that $h\preceq_2 y$ and $h\not=y$, which means $[p] \subseteq[q]$ and $(\forall i \in[p])(h(i) \leq y(i))$, and $[q] \subseteq [n] $ and $[q] \subseteq [m] $, and $(\forall i \in[q])(y(i) \leq \min(h(i),g(i)))$. It also means that $[q]=[p]$ and $y(i)=h(i)$, which is contradicted to $y\not=h$. Therefore, $h$ is the g.l.b. \par 
+Similarly, for all $f,g\in S,f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}$, we can find a function $z\in S,h:[r]\rightarrow \mathbb{N}$ such that $[z] =[m] $ if $[n]\subseteq [m]$ or $[z] =[n] $ if $[m]\subseteq [n]$, and $(\forall i \in[r])(z(i) = \max(h(i),g(i)))$. Therefore, we know that $z$ is the upper bound of $\{f,g\}$. And it is also the l.u.b of $\{f,g\}$ and the proof is the same as the proof of g.l.b. 
+\item No, it is not a linear order. Suppose it is a linear order, then for all $f,g\in S, f:[n]\rightarrow \mathbb{N},g:[m]\rightarrow \mathbb{N}$, if $f\not\preceq_2 g$, we must have $g\preceq_2 f$. If $f\not\preceq_2 g$, we have either $[m]\subset [n]$ or, $[n] \subseteq[m]$ but $(\exists i \in[n])(f(i) > g(i))$. Suppose it is the second condition, $[n] \subseteq[m]$ but $(\exists i \in[n])(f(i) > g(i))$. Since we cannot guarantee that $\forall i\in [m],g(i)\leq f(i)$, we still cannot guarantee $g\preceq_2 f$. Therefore, it is not a linear order.
+\end{itemize}
+\end{enumerate}
+
+
+\noindent \textbf{Q6.}
+Denote $a=\frac{1}{2}(x+y)(x+y+1)+y$, then we have,
+\begin{align*}
+f(x,y,z)=&\frac{1}{2}(a+z)(a+z+1)+z\\
+=&\frac{1}{2}(\frac{1}{2}(x+y)(x+y+1)+y+z)(\frac{1}{2}(x+y)(x+y+1)+y+z+1)+z\\
+=&\frac{x^4}{8}+\frac{x^3y}{2}+\frac{x^3}{4}+\frac{3x^2y^2}{4}+\frac{5x^2y}{4}+\frac{x^2z}{2}+\frac{3x^2}{8}+\frac{xy^3}{2}+\frac{7xy^2}{4}+xyz\\
+&+\frac{5xy}{4}+\frac{xz}{2}+\frac{x}{4}+\frac{y^4}{8}
++\frac{3y^3}{4}+\frac{y^2z}{2}+\frac{11y^2}{2}+\frac{3yz}{2}+\frac{3y}{4}+\frac{z^2}{2}+\frac{3z}{2}
+\end{align*}
+
+
+\noindent \textbf{Q7.}
+Every nonzero rational number has a unique representation in the form $\frac{(-1)^ka}{b}$ where $k\in\{0,1\}$ and $a,b\in \mathbb{N}$ with $a,b\not=0$ and the greatest common divisor of \textit{a} and \textit{b} is 1. Moreover, any two distinct sets $(k_1,a_1,b_1)$ and $(k_2,a_2,b_2)$, where $k\in\{0,1\}$ and $a,b\in \mathbb{N}$ with $a,b\not=0$ and the greatest common divisor of \textit{a} and \textit{b} is 1, yield distinct non-zero integers $\frac{(-1)^k_1a_1}{b_1}$ and $\frac{(-1)^k_2a_2}{b_2}$. This means the function 
+\begin{equation*}
+f(\frac{(-1)^ka}{b})=\left\{
+\begin{array}{lcl}
+0 & & {a\ \rm{or}\ b =0}\\
+(-1)^k\times (\frac{1}{2}(a+b)(a+b+1)+b) & & {a\not=0\ \rm{and}\ b\not=0}\\
+\end{array} 
+\right.,
+\end{equation*}
+is injective, which means $|\mathbb{Q}|\leq|\mathbb{Z}|$. Since $|\mathbb{Z}|=|\mathbb{N}|$, we thus have $|\mathbb{Q}|\leq|\mathbb{N}|$, which means that $\mathbb{Q}$ is countable.\\
+
+\noindent \textbf{Q8.}
+From the graph of the Cantor's Pairing Function, the $i$th diagonal has $i$ element, which means there are $\frac{i(i+1)}{2}$ elements in the first $i$ diagonals. Since
+\begin{align*}
+223=\frac{21\times 22}{2}-8>\frac{20\times 21}{2}=210,
+\end{align*}
+we get $(x,y)=(0+7,21-8)=(7,13)$.\\
+
+\noindent \textbf{Q9.}
+\begin{enumerate}
+\item First, suppose a function $f:\mathcal{P}(\mathbb{N} \times \mathbb{N})\rightarrow\mathcal{P}(\mathbb{N})$ such that all the natural number pairs in the set that is the element of the set $\mathcal{P}(\mathbb{N} \times \mathbb{N})$ are turned into specific natural numbers in the set that is the element of the $\mathcal{P}(\mathbb{N})$ by the function $f$. How the $f$ works is that 
+\begin{align*}
+f(\{(a,b),(c,d),...\})=\{\frac{1}{2}(a+b)(a+b+1)+b,\frac{1}{2}(c+d)(c+d+1)+d,...\}
+\end{align*}
+Since the Cantor's Pairing Function form $\mathbb{N}\times \mathbb{N}\rightarrow \mathbb{N}$ is bijective (i.e. one specific natural number pairs is only corresponded to one specific natural number), the function $f$ is injective.
+\item Second, suppose a function $g:\mathcal{P}(\mathbb{N})\rightarrow\mathcal{P}(\mathbb{N} \times \mathbb{N})$ such that all the natural numbers in the set that is the element of the $\mathcal{P}(\mathbb{N})$ are turned into specific natural number pairs in the set that is the element of the set $\mathcal{P}(\mathbb{N} \times \mathbb{N})$ by the function $g$. How the $g$ works is that 
+\begin{align*}
+&g(\{a,b,...\})=\{(n_1,n_2),(n_3,n_4),...\},\\
+& \rm{where}\ a=\frac{1}{2}(n_1+n_2)(n_1+n_2+1)+n_2, b=\frac{1}{2}(n_3+n_4)(n_3+n_4+1)+n_4,...\ \rm{and\ so\ on}
+\end{align*}
+Since the Cantor's Pairing Function form $\mathbb{N}\times \mathbb{N}\rightarrow \mathbb{N}$ is bijective (i.e. one specific natural number is only corresponded to one specific natural number pairs), the function $g$ is injective.
+\item Therefore, there exists a bijection function between $|\mathcal{P}(\mathbb{N} \times \mathbb{N})|$ and $|\mathcal{P}(\mathbb{N})|$, which means $|\mathcal{P}(\mathbb{N} \times \mathbb{N})|=|\mathcal{P}(\mathbb{N})|$.
+\end{enumerate}
+
+
+
+\noindent \textbf{Q10.}
+Consider a function $f:\mathcal{P}(\mathbb{N})\rightarrow \mathbb{R}$ such that for $A\in \mathcal{P}(\mathbb{N})$, $n\in A$, we have,
+\begin{align*}
+f(A)=\sum_{n\in A}10^{-n}
+\end{align*}
+Therefore, the function $f$ is injective, since $10^{-n}$ has different digits for different $n$ and thus the summation of various $10^{-n}$ must be different for different $A$ because they contain different $n$. Therefore, we have $| \mathcal{P}(\mathbb{N})|\leq |\mathbb{R}|$. 
+\par Because we have $|N|<|\mathcal{P}(\mathbb{N})|$, we have $|\mathbb{N}|<|\mathbb{R}|$.
+
+
+
+
+
+
+
+
+
+%========================================================================
+\end{document}

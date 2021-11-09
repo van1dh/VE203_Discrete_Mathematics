@@ -1,0 +1,329 @@
+\newcommand{\plogo}{\fbox{$\mathcal{PL}$}} % Generic dummy publisher logo
+
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage{fouriernc} % Use the New Century Schoolbook font
+\documentclass{article}[12pt]
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}  
+\newtheorem{lemma}{Lemma}  
+\usepackage{pifont}
+\newtheorem{proof}{Proof}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{verbatim}
+%\usepackage{ctex}
+\usepackage{gauss}
+\usepackage{float}
+\usepackage[version=4]{mhchem}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+%\usepackage{algorithm}
+\usepackage{algorithmic}
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\SetKwInput{KwInput}{Input}                % Set the Input
+\SetKwInput{KwOutput}{Output} 
+\begin{document}
+\noindent
+
+%========================================================================
+\noindent\framebox[\linewidth]{\shortstack[c]{
+\Large{\textbf{VE203 Assignment 8}}}}
+\begin{center}
+\footnotesize{\quad Name: YIN Guoxin\quad Student ID: 517370910043}
+
+
+\end{center}
+%=======================================================================
+
+\noindent \textbf{Q1.}
+Suppose the recurrence relation with initial conditions $a_0,a_1$ is 
+$a_n=c_1a_{n-1}+c_2a_{n-2}$, then the characteristic polynomial of this relation is 
+\begin{align*}
+\lambda^2-c_1\lambda-c_2=(\lambda-\alpha)^2=\lambda^2-2\lambda\alpha+\alpha^2,
+\end{align*}
+which means that $c_1=2\alpha,c_2=-\alpha^2$, i.e. $a_n=2\alpha a_{n-1}-\alpha^2a_{n-2}$ . Putting $a_{n}=q_{1} \alpha^{n}+q_{2} n \alpha^{n}$ back to the relation above, we have 
+\begin{align*}
+a_n&=2\alpha a_{n-1}-\alpha^2a_{n-2}\\
+q_{1} \alpha^{n}+q_{2} n \alpha^{n}&=2\alpha (q_{1} \alpha^{n-1}+q_{2} (n-1) \alpha^{n-1})-\alpha^2( q_{1} \alpha^{n-2}+q_{2} (n-2) \alpha^{n-2})\\
+&=2q_{1} \alpha^{n}+2q_{2} (n-1) \alpha^{n}-q_{1} \alpha^{n}-q_{2} (n-2) \alpha^{n}\\
+&=q_{1} \alpha^{n}+q_{2} n \alpha^{n}
+\end{align*}
+Therefore, we know that $a_{n}=q_{1} \alpha^{n}+q_{2} n \alpha^{n}$ satisfies the relation. Next, we need to show that such a sequence can satisfy the prescribed initial conditions. The initial conditions would be satisfied if we could choose $q_1,q_2$ such that for all $n=0,1$, $a_{n}=q_{1} \alpha^{n}+q_{2} n \alpha^{n}$. Letting $A=(a_0,a_1)^T$ and $Q=(q_1,q_2)^T$, this system of equations can be written as $A=MQ$, where 
+\begin{equation*}
+M=\begin{pmatrix} 1 & 0 \\ \alpha & \alpha \end{pmatrix}
+\end{equation*}
+Since the recurrence relation is degree 2, $-\alpha^2=c_2\not=0$, which means $\alpha\not=0$. Therefore, the determinant of $M$ is $\alpha\not=0$, which means $M$ is invertible. Then $Q=M^{-1}A$ yields values for $q_1,q_2$ that ensures that the sequence $(a_n)$ satisfies the prescribed initial conditions.\\
+
+
+
+
+\noindent \textbf{Q2.}
+The characteristic polynomial of this recurrence relation is 
+\begin{align*}
+\lambda^3-2\lambda^2-\lambda+2=(\lambda-1)(\lambda+1)(\lambda-2).
+\end{align*}
+And so, the characteristic equation has three distinct roots: $\alpha_1=1$, $\alpha_2=-1$, $\alpha_3=2$. Therefore $(a_n)$ has the form
+\begin{align*}
+a_n=q_1+q_2(-1)^n+q_32^n.
+\end{align*}
+Thus we have 
+\begin{align*}
+&a_0=3=q_1+q_2+q_3\\
+&a_1=6=q_1-q_2+2q_3\\
+&a_2=0=q_1+q_2+4q_3
+\end{align*}
+Therefore, $q_1=6,q_2=-2,q_3=-1$. And so $a_n=6-2(-1)^n-2^n$.\\ 
+
+
+
+
+
+
+\noindent \textbf{Q3.}
+The characteristic polynomial of this recurrence relation is 
+\begin{align*}
+\lambda^2-5\lambda+6=(\lambda-2)(\lambda-3).
+\end{align*}
+And so, the characteristic equation has two distinct roots: $\alpha_1=2$, $\alpha_2=3$. Since $f'(n)=2^n+2n^2+n$, we consider $a_n=c_n+d_n$, where $c_n=q_12^n+q_23^n+2^n$ and $d_n=q_32^n+q_43^n+2n^2+n$. For $c_n$, we seek a particular sequence ($p_n$) satisfying the inhomogeneous recurrence relation in the form $p_n=xn2^n$. This requires that 
+\begin{align*}
+xn2^n=5x(n-1)2^{n-1}-6x(n-2)2^{n-2}+2^n
+\end{align*}
+So $x=-2$, and $(c_n)$ is in the form,
+\begin{align*}
+c_n=q_12^n+q_23^n-2n2^n
+\end{align*}
+Similarly, for $d_n$, we seek a particular sequence ($q_n$) satisfying the inhomogeneous recurrence relation in the form $q_n=q_5n^2+q_6n+q_7$. This requires that 
+\begin{align*}
+q_5n^2+q_6n+q_7&=5(q_5(n-1)^2+q_6(n-1)+q_7)-6(q_5(n-2)^2+q_6(n-2)+q_7)+2n^2+n\\
+0&=(-2q_5+2)n^2+(14q_5-2q_6+1)n+(5q_5-3q_6+q_7)
+\end{align*}
+So $q_5=1,q_6=\frac{15}{2},q_7=\frac{67}{4}$, and $(d_n)$ is in the form,
+\begin{align*}
+d_n=q_32^n+q_43^n+n^2+\frac{15}{2}n+\frac{67}{4}
+\end{align*}
+Therefore, $a_n=(q_1+q_3)2^n+(q_2+q_4)3^n-2n2^n+n^2+\frac{15}{2}n+\frac{67}{4}$. The fact that $a_0=0,a_1=4$, yields 
+\begin{align*}
+0&=(q_1+q_3)+(q_2+q_4)+\frac{67}{4}\\
+4&=(q_1+q_3)2+(q_2+q_4)3-4+1+\frac{15}{2}+\frac{67}{4}
+\end{align*}
+Therefore, $q_1+q_3=-33$, $q_2+q_4=\frac{65}{4}$. The sequence $(a_n$) satisfies
+\begin{align*}
+a_n=-33\times 2^n+\frac{65}{4}\times 3^n-n2^{(n+1)}+n^2+\frac{15}{2}n+\frac{67}{4}
+\end{align*}
+
+
+
+
+
+\noindent \textbf{Q4.}
+The characteristic polynomial of this recurrence relation is 
+\begin{align*}
+\lambda^3-7\lambda^2+16\lambda-12=(\lambda-2)^2(\lambda-3).
+\end{align*}
+And so, the characteristic equation has two distinct roots: $\alpha_1=2$, $\alpha_2=3$. It follows that $(a_n)$ is of the form 
+\begin{align*}
+a_n=(q_3+q_4n)2^n+q_53^n
+\end{align*}
+Since $f'(n)=n4^n$, we consider a particular sequence ($p_n$) satisfying the inhomogeneous recurrence relation in the form $p_n=(q_1n+q_2)4^n$. This requires that 
+\begin{align*}
+(q_1n+q_2)4^n&=7(q_1(n-1)+q_2)4^{(n-1)}-16(q_1(n-2)+q_2)4^{(n-2)}+12(q_1(n-3)+q_2)4^{(n-3)}+n4^n\\
+0&=(-4q_1+64)n-20q_1-4q_2
+\end{align*}
+Hence, $q_1=16,q_2=-80$. Therefore, $p_n=(16n-80)4^n$ and $a_n=(q_3+q_4n)2^n+q_53^n+(16n-80)4^n$. Given that $a_0=-3,a_1=2,a_2=5$, we have 
+\begin{align*}
+-3&=q_3+q_5-80\\
+2&=(q_3+q_4)\times 2+q_53+(16-80)\times 4\\
+5&=(q_3+q_4\times 2)\times 2^2+q_53^2+(16\times 2-80)\times 4^2
+\end{align*}
+Therefore, $q_3=28,q_4=\frac{55}{2},q_5=49$. Therefore, 
+\begin{align*}
+a_n=(28+\frac{55}{2} n)2^n+49\times 3^n+(16n-80)4^n
+\end{align*}
+
+
+
+
+
+\noindent \textbf{Q5.}
+The recurrence relation is $a_n=a_{n-1}+n^4$ with initial condition $a_1=1$. The characteristic polynomial of it is $\lambda-1=0$ so that it only has one root $1$ with multiplicity 1. Therefore, solutions to the homogeneous recurrence relation are sequences $(b_n)$ with $b_n=q_1$. Since $f'(n)=n^4$ we guess that a particular solution $(p_n)$ can be found with $p_n=q_2n^5+q_3n^4+q_4n^3+q_5n^2+q_6n$. This requires that 
+\begin{align*}
+q_2n^5+q_3n^4+q_4n^3+q_5n^2+q_6n=q_2(n-1)^5+q_3(n-1)^4+q_4(n-1)^3+q_5(n-1)^2+q_6(n-1)+n^4
+\end{align*}
+Therefore, we have $0=n^4(1-5q_2)+n^3(10q_2-4q_3)+n^2(-10q_2+6q_3-3q_4)+n(5q_2-4q_3+3q_4-3q_5)+(-q_2+q_3-q_4+q_5-q_6)$. Hence, $q_2=\frac{1}{5},q_3=\frac{1}{2}, q_4=\frac{1}{3},q_5=0,q_6=-\frac{1}{30}$. Therefore, $(a_n)$ is of the form 
+\begin{align*}
+a_n=p_1+\frac{1}{5}n^5+\frac{1}{2}n^4+\frac{1}{3}n^3-\frac{1}{30}n
+\end{align*}
+The initial conditions yield equations 
+\begin{align*}
+1=p_1+\frac{1}{5}+\frac{1}{2}+\frac{1}{3}-\frac{1}{30}
+\end{align*}
+Therefore, $p_1=0$. So 
+\begin{align*}
+a_n=\frac{1}{5}n^5+\frac{1}{2}n^4+\frac{1}{3}n^3-\frac{1}{30}n
+\end{align*}
+\noindent \textbf{Q6.}
+According to the initial conditions, $a_1=3a_0+2b_0=3+4=7$. Then rearrange the relations, we get
+\begin{align*}
+&a_n-b_n=2a_{n-1}\\
+&b_n=a_n-2a_{n-1}\\
+&b_{n-1}=a_{n-1}-2a_{n-2}\\
+&a_n=3a_{n-1}+2a_{n-1}-4a_{n-2}=5a_{n-1}-4a_{n-2}
+\end{align*}
+Therefore, the characteristic polynomial of $(a_n)$ is 
+\begin{align*}
+\lambda^2-5\lambda+4=(\lambda-1)(\lambda-4)
+\end{align*}
+And so, the characteristic equation has two distinct roots: $\alpha_1=1,\alpha_2=4$. Therefore $(a_n)$ has the form 
+\begin{align*}
+a_n=q_1+q_24^n.
+\end{align*}
+Thus we have 
+\begin{align*}
+a_0&=1=q_1+q_2\\
+a_1&=7=q_1+4q_2
+\end{align*}
+Therefore, $q_1=-1,q_2=2$. And so $a_n=-1+2\times 4^n$. Then, $a_{n-1}=-1+2\times 4^{n-1}$ and so $b_n=a_n-2a_{n-1}=-1+2\times 4^n-2(-1+2\times 4^{n-1})=1+4^n
+$\\
+
+
+\noindent \textbf{Q7.}
+The characteristic polynomial of this recurrence relation is 
+\begin{align*}
+\lambda^2-2\lambda+2=(\lambda-(1-i))(\lambda-(1+i))
+\end{align*}
+And so, the characteristic equation has two distinct roots: $\alpha_1=1-i$, $\alpha_2=1+i$. It follows that $(a_n)$ is of the form 
+\begin{align*}
+a_n=q_1(1-i)^n+q_2(1+i)^n
+\end{align*}
+Since $f'(n)=3^n$, we consider a particular sequence ($p_n$) satisfying the inhomogeneous recurrence relation in the form $p_n=c3^n$. This requires that 
+\begin{align*}
+c3^n&=2c\times 3^{n-1}-2c\times 3^{n-2}+ 3^n\\
+9c&=6c-2c+9\\
+5c&=9\\
+c&=\frac{9}{5}
+\end{align*}
+Therefore, $p_n=\frac{9}{5}3^n$ and $a_n=q_1(1-i)^n+q_2(1+i)^n+\frac{9}{5}3^n$. Given that $a_0=1,a_1=2$, we have 
+\begin{align*}
+1&=q_1+q_2+\frac{9}{5}\\
+2&=q_1(1-i)+q_2(1+i)+\frac{9}{5}\times 3
+\end{align*}
+Therefore, $q_1=-\frac{13i+4}{10},q_2=\frac{13i-4}{10}$. Therefore, 
+\begin{align*}
+a_n=-\frac{13i+4}{10}(1-i)^n+\frac{13i-4}{10}(1+i)^n+\frac{9}{5}3^n
+\end{align*}
+
+\noindent \textbf{Q8.}
+\begin{enumerate}[(i)]
+\item 
+\begin{align*}
+G(x)=x-1+\sum_{n=0}^{\infty}3^nx^n=4x+\sum_{n=2}^{\infty}3^nx^n
+\end{align*}
+So the sequence is 
+\begin{equation*}
+a_n=\left\{
+\begin{array}{lcl}
+0 & & {n=0}\\
+4 & & {n=1}\\
+3^n & & {n\geq 2}
+\end{array} \right.
+\end{equation*}
+\item 
+\begin{align*}
+G(x)=\sum_{n=0}^{\infty}\frac{1}{n!} (3x^2)^n-1=\sum_{n=1}^{\infty}\frac{1}{n!} 3^nx^{2n}
+\end{align*}
+So the sequence is 
+\begin{equation*}
+a_n=\left\{
+\begin{array}{lcl}
+0 & & {n=0\text{ and }n\text{ is odd.} }\\
+\frac{3^n}{n!} & & {\text{otherwise}}
+\end{array} \right.
+\end{equation*}
+\item 
+%\begin{align*}
+%G(x)&=\frac{x}{1+x+x^2}=\frac{x(x-1)}{x^3-1}\\
+%&=
+%\end{align*}
+\begin{align*}
+G(x)&=x\frac{1}{1-(-(x+x^2))}\\
+&=x\sum_{n=0}^{\infty}(-1)^n(x+x^2)^n\\
+&=x\sum_{n=0}^{\infty}(-1)^nx^n(1+x)^n\\
+&=x\sum_{n=0}^{\infty}(-1)^n x^n \sum_{k=0}^{n}\binom{n}{k}x^k\\
+&=\sum_{n=0}^{\infty} \sum_{k=0}^{n}\binom{n}{k}(-1)^n x^{n+k+1}
+\end{align*}
+So the sequence is 
+\begin{equation*}
+a_n=\left\{
+\begin{array}{lcl}
+0 & & {n=0}\\
+\sum_{k=0}^{n-1-\lfloor \frac{n}{2}\rfloor}\binom{n-1-k}{k}(-1)^{n-1-k} & & {\text{otherwise}}
+\end{array} \right.
+\end{equation*}
+\end{enumerate}
+
+\noindent \textbf{Q9.}
+\begin{enumerate}[(i)]
+\item Let both sides multiply with $\frac{g(n+1)Q(n+1)}{f(n)}$, therefore, the relation becomes
+\begin{align*}
+f(n) a_{n}&=g(n) a_{n-1}+h(n)\\
+g(n+1)Q(n+1) a_n&=\frac{g(n+1)Q(n+1)g(n)}{f(n)}a_{n-1}+\frac{g(n+1)Q(n+1)}{f(n)}h(n)
+\end{align*}
+Since we know 
+\begin{align*}
+\frac{Q(n+1)}{Q(n)}=\frac{\frac{f(1) f(2) \cdots f(n)}{g(1) g(2) \cdots g(n+1)}}{\frac{f(1) f(2) \cdots f(n-1)}{g(1) g(2) \cdots g(n)}}=\frac{f(n)}{g(n+1)}, 
+\end{align*}
+we have 
+\begin{align*}
+g(n+1)Q(n+1) a_n&=\frac{g(n+1)Q(n+1)g(n)}{f(n)}a_{n-1}+\frac{g(n+1)Q(n+1)}{f(n)}h(n)\\
+&=\frac{Q(n)Q(n+1)g(n)}{Q(n+1)}a_{n-1}+\frac{Q(n)Q(n+1)}{Q(n+1)}h(n)\\
+&=Q(n)g(n)a_{n-1}+Q(n)h(n)\\
+b_{n}&=b_{n-1}+Q(n) h(n)
+\end{align*}
+\item \begin{align*}
+b_n-b_{n-1}&=Q(n)h(n)\\
+b_{n-1}-b_{n-2}&=Q(n-1)h(n-1)\\
+\dots\\
+b_1-b_{0}&=Q(1)h(1),
+\end{align*}
+where $b_0=g(1)Q(1)C=g(1)\frac{1}{g(1)}C=C$. Adding the above $n$ equations together, we get
+\begin{align*}
+b_n-b_0&=\sum_{i=1}^{n} Q(i) h(i)\\
+b_n&=C+\sum_{i=1}^{n} Q(i) h(i)\\
+g(n+1) Q(n+1) a_{n}&=C+\sum_{i=1}^{n} Q(i) h(i)\\
+a_{n}&=\frac{C+\sum_{i=1}^{n} Q(i) h(i)}{g(n+1) Q(n+1)}
+\end{align*}
+\item In this sequence, $f(n)=1,g(n)=n+3,h(n)=n,C=1$. Therefore, $Q(n)=\frac{f(1) f(2) \cdots f(n-1)}{g(1) g(2) \cdots g(n)}=\frac{6}{(n+3)!}$.
+\begin{align*}
+a_{n}&=\frac{C+\sum_{i=1}^{n} Q(i) h(i)}{g(n+1) Q(n+1)}\\
+&=\frac{1+\sum_{i=1}^{n} \frac{6i}{(i+3)!} }{(n+4) \frac{6}{(n+4)!}}\\
+&=\frac{1+\sum_{i=1}^{n} \frac{6i}{(i+3)!} }{\frac{6}{(n+3)!}}\\
+&=\frac{(n+3)!+\sum_{i=1}^{n} \frac{6i(n+3)!}{(i+3)!} }{6}
+\end{align*}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%========================================================================
+\end{document}
